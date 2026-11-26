@@ -123,3 +123,29 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+
+.header-banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.header-banner img {
+    width: 220px;
+    max-height: 130px;
+    object-fit: contain;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    margin: 0 0 10px 0;
+}
+
+.header-text p {
+    margin: 0;
+}
