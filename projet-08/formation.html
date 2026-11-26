@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation | Chercheuse en biologie marine</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .card-icon {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mini-image {
+            width: 130px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            BIO<span>MARINE</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Présentation</a>
+            <a href="formation.html" class="active">Formation</a>
+            <a href="regards.html">Regards sur le métier</a>
+            <a href="exploration.html">Exploration</a>
+        </nav>
+
+    </header>
+
+    <!-- BULLES ANIMÉES -->
+
+    <div class="bubbles">
+        <span class="bubble bubble-1"></span>
+        <span class="bubble bubble-2"></span>
+        <span class="bubble bubble-3"></span>
+        <span class="bubble bubble-4"></span>
+        <span class="bubble bubble-5"></span>
+        <span class="bubble bubble-6"></span>
+    </div>
+
+    <!-- PAGE FORMATION -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    LE CHEMIN VERS LA RECHERCHE
+                </p>
+
+                <h1>
+                    DEVENIR
+                    <span>CHERCHEUSE EN BIOLOGIE MARINE</span>
+                </h1>
+
+                <p class="subtitle">
+                    Apprendre • Étudier • Se spécialiser
+                </p>
+
+                <p class="intro">
+                    Découvrir les études, les diplômes et les
+                    connaissances nécessaires pour travailler
+                    dans le domaine de la biologie marine.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#parcours" class="main-button">
+                        Découvrir le parcours
+                        <span>→</span>
+                    </a>
+
+                    <button class="info-button" onclick="openInfo()">
+                        En savoir plus
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="light-effect"></div>
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+
+        </section>
+
+        <!-- FENÊTRE D'INFORMATION -->
+
+        <div id="infoBox" class="info-box">
+
+            <button class="close-button" onclick="closeInfo()">×</button>
+
+            <div class="info-content">
+
+                <p class="small-title">LE SAVIEZ-VOUS ?</p>
+
+                <h2>Un parcours scientifique</h2>
+
+                <p>
+                    Pour devenir chercheuse en biologie marine,
+                    il faut suivre des études scientifiques
+                    permettant de comprendre les êtres vivants,
+                    les océans et leur environnement.
+                </p>
+
+                <p>
+                    En France, le parcours passe généralement
+                    par une licence, un master puis un doctorat
+                    pour exercer comme chercheuse dans la recherche
+                    scientifique universitaire.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PRÉSENTATION DU PARCOURS -->
+
+        <section class="discover" id="parcours">
+
+            <div class="section-container">
+
+                <div class="section-text">
+
+                    <p class="small-title">UN PARCOURS EN PLUSIEURS ÉTAPES</p>
+
+                    <h2>Construire son avenir scientifique</h2>
+
+                    <p>
+                        Le parcours pour devenir chercheuse en biologie
+                        marine commence par l'acquisition de bonnes
+                        connaissances scientifiques au lycée.
+                    </p>
+
+                    <p>
+                        Après le baccalauréat, il est possible de
+                        poursuivre des études en biologie, en sciences
+                        de la vie ou en sciences de la mer.
+                    </p>
+
+                    <p>
+                        Ces études permettent de découvrir le monde
+                        vivant, d'apprendre à réaliser des expériences
+                        et de comprendre les méthodes utilisées par
+                        les scientifiques.
+                    </p>
+
+                    <button class="read-more" onclick="showMore()">
+                        En savoir plus +
+                    </button>
+
+                    <div id="moreText" class="more-text">
+
+                        <p>
+                            Après une licence et un master, les personnes
+                            qui souhaitent devenir chercheuses dans
+                            le milieu universitaire poursuivent
+                            généralement avec un doctorat.
+                            Cette formation permet de mener un projet
+                            de recherche et d'approfondir un sujet
+                            scientifique précis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="ocean-card">
+
+                    <div class="ocean-card-content">
+
+                        <h3>UN AVENIR À EXPLORER</h3>
+
+                        <p>
+                            Chaque étape des études permet de se
+                            rapprocher du monde de la recherche
+                            et de mieux comprendre les océans.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 4 CARTES INTERACTIVES -->
+
+        <section class="explore">
+
+            <div class="section-container">
+
+                <div class="center-title">
+
+                    <p class="small-title">
+                        LES ÉTAPES DE LA FORMATION
+                    </p>
+
+                    <h2>Apprendre • Se former • Réussir</h2>
+
+                    <p>
+                        Cliquez sur une carte pour découvrir
+                        les différentes étapes des études.
+                    </p>
+
+                </div>
+
+                <div class="cards">
+
+                    <!-- CARTE 1 : LYCÉE -->
+
+                    <div class="marine-card"
+                         onclick="openCard('research')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg"
+                                alt="Livres et études scientifiques">
+
+                        </div>
+
+                        <h3>LE LYCÉE</h3>
+                        <p>Acquérir les bases scientifiques.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                    <!-- CARTE 2 : LICENCE -->
+
+                    <div class="marine-card"
+                         onclick="openCard('explore')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg"
+                                alt="Étudiante travaillant à l'université">
+
+                        </div>
+
+                        <h3>LA LICENCE</h3>
+                        <p>Étudier la biologie.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                    <!-- CARTE 3 : MASTER -->
+
+                    <div class="marine-card"
+                         onclick="openCard('observe')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/8325714/pexels-photo-8325714.jpeg"
+                                alt="Chercheuse travaillant dans un laboratoire">
+
+                        </div>
+
+                        <h3>LE MASTER</h3>
+                        <p>Se spécialiser en biologie marine.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                    <!-- CARTE 4 : DOCTORAT -->
+
+                    <div class="marine-card"
+                         onclick="openCard('protect')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+                                alt="Recherche scientifique">
+
+                        </div>
+
+                        <h3>LE DOCTORAT</h3>
+                        <p>Devenir spécialiste de la recherche.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- POP-UP DES CARTES -->
+
+        <div id="cardPopup" class="popup">
+
+            <div class="popup-content">
+
+                <button class="close-button" onclick="closeCard()">
+                    ×
+                </button>
+
+                <div id="popupText"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             JEU INTERACTIF : CONSTRUIS TON PARCOURS
+        ================================================== -->
+
+        <section class="parcours-game" id="jeu-parcours">
+
+            <div class="parcours-container">
+
+                <p class="small-title">
+                    À TOI DE JOUER !
+                </p>
+
+                <h2>Construis ton parcours scientifique</h2>
+
+                <p class="parcours-intro">
+                    Tu souhaites devenir chercheuse en biologie marine ?
+                    Retrouve les quatre grandes étapes de formation
+                    et replace-les dans le bon ordre, du lycée jusqu'au doctorat.
+                </p>
+
+                <p class="parcours-instruction" id="parcoursInstruction">
+                    Choisis la première étape de ton parcours !
+                </p>
+
+                <!-- BOUTONS DU JEU -->
+
+                <div class="parcours-choices" id="parcoursChoices">
+
+                    <button class="parcours-choice" type="button">
+                        Le master
+                    </button>
+
+                    <button class="parcours-choice" type="button">
+                        Le lycée
+                    </button>
+
+                    <button class="parcours-choice" type="button">
+                        Le doctorat
+                    </button>
+
+                    <button class="parcours-choice" type="button">
+                        La licence
+                    </button>
+
+                </div>
+
+                <!-- MESSAGE DU JEU -->
+
+                <div class="parcours-feedback"
+                     id="parcoursFeedback"
+                     aria-live="polite">
+
+                    À toi de jouer ! Trouve la première étape.
+
+                </div>
+
+                <!-- PARCOURS CONSTRUIT -->
+
+                <div class="parcours-order">
+
+                    <h3>Ton parcours construit</h3>
+
+                    <div id="parcoursOrder">
+
+                        <p>1. À découvrir...</p>
+                        <p>2. À découvrir...</p>
+                        <p>3. À découvrir...</p>
+                        <p>4. À découvrir...</p>
+
+                    </div>
+
+                </div>
+
+                <!-- RECOMMENCER -->
+
+                <button class="parcours-restart"
+                        id="parcoursRestart"
+                        type="button"
+                        onclick="restartParcours()">
+
+                    Recommencer le jeu
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FIN DE PAGE -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <p class="small-title">APRÈS LES ÉTUDES</p>
+
+                <h2>Prête à découvrir le métier ?</h2>
+
+                <p>
+                    Après plusieurs années de formation,
+                    la chercheuse peut participer à des projets
+                    scientifiques et contribuer à une meilleure
+                    connaissance des océans.
+                </p>
+
+                <a href="regards.html" class="main-button">
+                    Découvrir le quotidien du métier
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIED DE PAGE -->
+
+    <footer>
+
+        <p>© 2026 — Chercheuse en biologie marine</p>
+        <p>Explorer • Comprendre • Protéger</p>
+
+    </footer>
+
+
+    <!-- SCRIPT EXISTANT DU SITE -->
+
+    <script src="script.js"></script>
+
+
+    <!-- =================================================
+         JAVASCRIPT DU JEU INTERACTIF
+    ================================================== -->
+
+    <script>
+
+        // Les étapes dans le bon ordre
+
+        const parcoursData = [
+
+            {
+                title: "Le lycée",
+                description: "Acquérir les bases scientifiques, notamment en SVT, en physique-chimie et en mathématiques."
+            },
+
+            {
+                title: "La licence",
+                description: "Étudier les sciences de la vie, la biologie et les bases du fonctionnement des organismes."
+            },
+
+            {
+                title: "Le master",
+                description: "Approfondir ses connaissances et se spécialiser, par exemple en biologie marine."
+            },
+
+            {
+                title: "Le doctorat",
+                description: "Mener un projet de recherche scientifique et approfondir un sujet pendant plusieurs années."
+            }
+
+        ];
+
+
+        // Variables du jeu
+
+        let parcoursPosition = 0;
+        let parcoursCompleted = [];
+
+
+        // Mélanger les étapes pour rendre le jeu moins facile
+
+        function shuffleParcours(array) {
+
+            const shuffled = [...array];
+
+            for (let i = shuffled.length - 1; i > 0; i--) {
+
+                const j = Math.floor(Math.random() * (i + 1));
+
+                [shuffled[i], shuffled[j]] =
+                    [shuffled[j], shuffled[i]];
+
+            }
+
+            return shuffled;
+
+        }
+
+
+        // Afficher les boutons
+
+        function displayParcoursChoices() {
+
+            const container =
+                document.getElementById("parcoursChoices");
+
+            container.innerHTML = "";
+
+            const shuffled = shuffleParcours(parcoursData);
+
+            shuffled.forEach((stage) => {
+
+                const button = document.createElement("button");
+
+                button.type = "button";
+                button.className = "parcours-choice";
+                button.textContent = stage.title;
+
+                button.addEventListener("click", function () {
+
+                    chooseParcours(stage.title, button);
+
+                });
+
+                container.appendChild(button);
+
+            });
+
+        }
+
+
+        // Vérifier le choix du joueur
+
+        function chooseParcours(choice, button) {
+
+            const feedback =
+                document.getElementById("parcoursFeedback");
+
+            const instruction =
+                document.getElementById("parcoursInstruction");
+
+            const expectedStage =
+                parcoursData[parcoursPosition];
+
+            // Bonne réponse
+
+            if (choice === expectedStage.title) {
+
+                button.classList.add("correct");
+                button.disabled = true;
+
+                parcoursCompleted.push(expectedStage);
+
+                feedback.textContent =
+                    "Bravo ! " + expectedStage.description;
+
+                parcoursPosition++;
+
+                updateParcours();
+
+                if (parcoursPosition === parcoursData.length) {
+
+                    instruction.textContent =
+                        "Félicitations ! Tu as terminé ton parcours scientifique !";
+
+                    feedback.textContent =
+                        "Excellent travail ! Tu as retrouvé les quatre étapes dans le bon ordre. Tu connais maintenant le parcours général pour devenir chercheuse en biologie marine.";
+
+                    return;
+
+                }
+
+                instruction.textContent =
+                    "Très bien ! Trouve maintenant l'étape numéro " +
+                    (parcoursPosition + 1) + ".";
+
+            }
+
+            // Mauvaise réponse
+
+            else {
+
+                button.classList.add("incorrect");
+
+                feedback.textContent =
+                    "Ce n'est pas encore la bonne étape. Réfléchis à l'ordre des études et essaie encore !";
+
+                button.disabled = true;
+
+            }
+
+        }
+
+
+        // Mettre à jour le parcours construit
+
+        function updateParcours() {
+
+            const order =
+                document.getElementById("parcoursOrder");
+
+            order.innerHTML = "";
+
+            for (let i = 0; i < 4; i++) {
+
+                const paragraph =
+                    document.createElement("p");
+
+                if (parcoursCompleted[i]) {
+
+                    paragraph.textContent =
+                        (i + 1) + ". " +
+                        parcoursCompleted[i].title;
+
+                } else {
+
+                    paragraph.textContent =
+                        (i + 1) + ". À découvrir...";
+
+                }
+
+                order.appendChild(paragraph);
+
+            }
+
+        }
+
+
+        // Recommencer le jeu
+
+        function restartParcours() {
+
+            parcoursPosition = 0;
+            parcoursCompleted = [];
+
+            document.getElementById("parcoursInstruction")
+                .textContent =
+                "Choisis la première étape de ton parcours !";
+
+            document.getElementById("parcoursFeedback")
+                .textContent =
+                "À toi de jouer ! Trouve la première étape.";
+
+            updateParcours();
+
+            displayParcoursChoices();
+
+        }
+
+
+        // Lancer le jeu au chargement de la page
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            displayParcoursChoices();
+
+            updateParcours();
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exploration | Biologie marine</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           STYLES COMPLÉMENTAIRES
+        ===================================================== */
+
+        .exploration-page .exploration-photo {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exploration-page .marine-card {
+            min-height: 380px;
+        }
+
+        .exploration-page .ocean-card {
+            min-height: 270px;
+        }
+
+        .exploration-page .exploration-action {
+            cursor: pointer;
+            margin-top: 15px;
+            font-family: inherit;
+            border: none;
+        }
+
+        .exploration-page .day-list {
+            display: grid;
+            gap: 18px;
+            max-width: 900px;
+            margin: 35px auto 0;
+        }
+
+        .exploration-page .day-item {
+            min-height: auto;
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .exploration-page .day-time {
+            color: var(--turquoise);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .exploration-page .popup-content {
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        /* =====================================================
+           COMPARAISON DES DAUPHINS
+        ===================================================== */
+
+        .dolphin-comparison {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .dolphin-intro {
+            text-align: center;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto 30px;
+        }
+
+        .dolphin-comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .dolphin-comparison-card {
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .dolphin-comparison-card:hover {
+            transform: translateY(-4px);
+            transition: 0.3s ease;
+        }
+
+        .dolphin-pink {
+            border-top: 4px solid #f4a6c8;
+        }
+
+        .dolphin-grey {
+            border-top: 4px solid #9fb3bf;
+        }
+
+        .dolphin-icon {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+
+        .dolphin-comparison-card h3 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .dolphin-pink h3 {
+            color: #f4a6c8;
+        }
+
+        .dolphin-grey h3 {
+            color: #b7c7d0;
+        }
+
+        .dolphin-scientific {
+            text-align: center;
+            opacity: 0.75;
+            margin-bottom: 20px;
+        }
+
+        .dolphin-comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dolphin-comparison-card li {
+            padding: 10px 0;
+            line-height: 1.55;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dolphin-comparison-card li:last-child {
+            border-bottom: none;
+        }
+
+        .dolphin-difference {
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(39, 212, 216, 0.08);
+            border: 1px solid rgba(39, 212, 216, 0.25);
+        }
+
+        .dolphin-difference h3 {
+            text-align: center;
+            color: var(--light-blue);
+            margin-bottom: 15px;
+        }
+
+        .dolphin-difference p {
+            line-height: 1.8;
+        }
+
+        .dolphin-fact {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(244, 166, 200, 0.09);
+            border-left: 4px solid #f4a6c8;
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media screen and (max-width: 700px) {
+
+            .exploration-page .day-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .exploration-page .marine-card {
+                min-height: auto;
+            }
+
+            .dolphin-comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dolphin-comparison-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="exploration-page">
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            BIO<span>MARINE</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Présentation</a>
+            <a href="formation.html">Formation</a>
+            <a href="regards.html">Regards sur le métier</a>
+            <a href="exploration.html" class="active">Exploration</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    À LA DÉCOUVERTE DES OCÉANS
+                </p>
+
+                <h1>
+                    EXPLORER
+                    <span>LE MONDE MARIN</span>
+                </h1>
+
+                <p>
+                    Plonge dans l'univers fascinant de la biologie marine.
+                    Découvre les océans, les espèces qui les habitent et
+                    les missions des scientifiques qui les étudient.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#galerie" class="main-button">
+                        Commencer l'exploration
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="bubbles">
+
+                <span class="bubble bubble-1"></span>
+                <span class="bubble bubble-2"></span>
+                <span class="bubble bubble-3"></span>
+                <span class="bubble bubble-4"></span>
+                <span class="bubble bubble-5"></span>
+                <span class="bubble bubble-6"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GALERIE PHOTOGRAPHIQUE
+        ================================================= -->
+
+        <section class="explore" id="galerie">
+
+            <div class="section-container">
+
+                <div class="center-title">
+
+                    <p class="small-title">
+                        UN MONDE À EXPLORER
+                    </p>
+
+                    <h2>
+                        Les merveilles des océans
+                    </h2>
+
+                    <p>
+                        Les océans abritent une incroyable diversité
+                        d'espèces et de paysages.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <!-- IMAGE 1 : RÉCIF DE CORAIL -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://static0.thetravelimages.com/wordpress/wp-content/uploads/2024/11/dreamstime_xxl_332746043.jpg?w=1600&h=900&fit=crop"
+                            alt="Récif de corail"
+                            loading="lazy">
+
+                        <h3>
+                            Les récifs coralliens
+                        </h3>
+
+                        <p>
+                            De véritables refuges sous-marins qui accueillent
+                            une grande diversité d'espèces.
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 2 : TORTUE -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://www.aquaportail.com/pictures1803/tortue-marine-verte-chelonia-mydas.jpg"
+                            alt="Tortue marine"
+                            loading="lazy">
+
+                        <h3>
+                            Les tortues marines
+                        </h3>
+
+                        <p>
+                            Des reptiles marins qui parcourent parfois
+                            des milliers de kilomètres.
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 3 : REQUIN -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://www.fishipedia.fr/wp-content/uploads/2019/05/TIGER-SHARK_AP5A7138_FGUERIN-1.jpg"
+                            alt="Requin sous l'eau"
+                            loading="lazy">
+
+                        <h3>
+                            Les requins
+                        </h3>
+
+                        <p>
+                            Des prédateurs essentiels à l'équilibre
+                            des écosystèmes marins.
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 4 : CORAUX COLORÉS -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://img.freepik.com/photos-premium/illustration-du-monde-sous-marin-coraux-tropicaux-colores-lumiere-du-soleil-traversant-eau-mer-beaute-du-recif-corallien-ia-generative_444390-23982.jpg?w=1060"
+                            alt="Coraux colorés"
+                            loading="lazy">
+
+                        <h3>
+                            Les coraux
+                        </h3>
+
+                        <p>
+                            De petits organismes qui construisent
+                            de grands récifs au fil du temps.
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 5 : BANC DE POISSONS -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://www.lechasseurfrancais.com/wp-content/uploads/2024/07/capture-decran-2024-07-14-a-16.27.38-1024x679.png"
+                            alt="Banc de poissons"
+                            loading="lazy">
+
+                        <h3>
+                            Les bancs de poissons
+                        </h3>
+
+                        <p>
+                            Des groupes de poissons qui se déplacent
+                            ensemble pour se protéger.
+                        </p>
+
+                    </article>
+
+
+                    <!-- IMAGE 6 : DAUPHINS -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://www.radiofrance.fr/s3/cruiser-production/2023/02/bb2dfb27-420a-4714-9a3a-0becd871041e/1200x680_reencodedfatimage_gettyimages-541063840.jpg"
+                            alt="Dauphins"
+                            loading="lazy">
+
+                        <h3>
+                            Les dauphins
+                        </h3>
+
+                        <p>
+                            Des mammifères marins connus pour leur
+                            intelligence et leur communication.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LES CINQ OCÉANS
+        ================================================= -->
+
+        <section class="discover">
+
+            <div class="section-container">
+
+                <div class="center-title">
+
+                    <p class="small-title">
+                        LES GRANDES ÉTENDUES D'EAU
+                    </p>
+
+                    <h2>
+                        À la découverte des cinq océans
+                    </h2>
+
+                    <p>
+                        Clique sur un océan pour découvrir ses caractéristiques.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <!-- OCÉAN PACIFIQUE -->
+
+                    <article class="marine-card ocean-card">
+
+                        <img class="exploration-photo"
+                            src="https://images.pexels.com/photos/35642659/pexels-photo-35642659.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                            alt="Océan Pacifique"
+                            loading="lazy">
+
+                        <h3>
+                            Océan Pacifique
+                        </h3>
+
+                        <p>
+                            Le plus vaste océan de la planète, entre l'Asie,
+                            l'Océanie et les Amériques.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('pacifique')">
+
+                            Découvrir
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- OCÉAN ATLANTIQUE -->
+
+                    <article class="marine-card ocean-card">
+
+                        <img class="exploration-photo"
+                            src="https://images.pexels.com/photos/2315267/pexels-photo-2315267.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                            alt="Océan Atlantique"
+                            loading="lazy">
+
+                        <h3>
+                            Océan Atlantique
+                        </h3>
+
+                        <p>
+                            Un océan qui sépare notamment l'Europe et l'Afrique
+                            des Amériques.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('atlantique')">
+
+                            Découvrir
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- OCÉAN INDIEN -->
+
+                    <article class="marine-card ocean-card">
+
+                        <img class="exploration-photo"
+                            src="https://images.pexels.com/photos/28408420/pexels-photo-28408420.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                            alt="Océan Indien"
+                            loading="lazy">
+
+                        <h3>
+                            Océan Indien
+                        </h3>
+
+                        <p>
+                            Un océan situé entre l'Afrique, l'Asie et l'Australie.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('indien')">
+
+                            Découvrir
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- OCÉAN ARCTIQUE -->
+
+                    <article class="marine-card ocean-card">
+
+                        <img class="exploration-photo"
+                            src="https://images.pexels.com/photos/20558238/pexels-photo-20558238.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                            alt="Océan Arctique"
+                            loading="lazy">
+
+                        <h3>
+                            Océan Arctique
+                        </h3>
+
+                        <p>
+                            Un océan situé autour du pôle Nord,
+                            caractérisé par ses eaux froides.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('arctique')">
+
+                            Découvrir
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- OCÉAN AUSTRAL -->
+
+                    <article class="marine-card ocean-card">
+
+                        <img class="exploration-photo"
+                            src="https://images.pexels.com/photos/7321835/pexels-photo-7321835.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                            alt="Océan Austral"
+                            loading="lazy">
+
+                        <h3>
+                            Océan Austral
+                        </h3>
+
+                        <p>
+                            Il entoure l'Antarctique et abrite une faune
+                            adaptée au froid.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('austral')">
+
+                            Découvrir
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FENÊTRE INTERACTIVE
+        ================================================= -->
+
+        <div id="explorationPopup"
+            class="popup"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="explorationPopupTitle"
+            onclick="closeExplorationOutside(event)">
+
+            <div class="popup-content">
+
+                <button class="close-button"
+                    onclick="closeExplorationInfo()"
+                    aria-label="Fermer">
+
+                    ×
+
+                </button>
+
+                <div id="explorationPopupText"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ESPÈCES MARINES
+        ================================================= -->
+
+        <section class="explore">
+
+            <div class="section-container">
+
+                <div class="center-title">
+
+                    <p class="small-title">
+                        LA VIE SOUS-MARINE
+                    </p>
+
+                    <h2>
+                        Rencontre avec les espèces marines
+                    </h2>
+
+                    <p>
+                        Clique sur une fiche pour en apprendre davantage
+                        sur ces habitants des océans.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <!-- IMAGE 7 : TORTUE -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://i.pinimg.com/originals/69/3c/9a/693c9ab65ecae15346dfe24dd1cfdc47.jpg"
+                            alt="Tortue marine"
+                            loading="lazy">
+
+                        <h3>
+                            La tortue marine
+                        </h3>
+
+                        <p>
+                            Un reptile marin qui joue un rôle important
+                            dans les écosystèmes océaniques.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('tortue')">
+
+                            Voir la fiche
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- IMAGE 8 : REQUIN -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=431,fit=crop/m2WBB6n1W2FLvxB6/requin-blanc-surina-shark-AzGeRvPnoksXD51x.jpg"
+                            alt="Requin"
+                            loading="lazy">
+
+                        <h3>
+                            Le requin
+                        </h3>
+
+                        <p>
+                            Un poisson cartilagineux présent dans
+                            de nombreux milieux marins.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('requin')">
+
+                            Voir la fiche
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- IMAGE 9 : DAUPHIN ROSE -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://www.animalsaroundtheglobe.com/wp-content/uploads/2024/06/animalsaroundtheglobe_Pink_beluga_dolphin_a_pink_colored_marine_86b4660f-b72d-4b3a-8036-cea9d6b98272.png"
+                            alt="Dauphin rose"
+                            loading="lazy">
+
+                        <h3>
+                            Le dauphin
+                        </h3>
+
+                        <p>
+                            Découvre les différences entre le dauphin rose
+                            d'Amazonie et le grand dauphin.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('dauphin')">
+
+                            Voir la comparaison
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- IMAGE 10 : CORAIL -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://cdn.futura-sciences.com/buildsv6/images/wide1920/f/b/a/fba4e528ba_50158634_corail.jpg"
+                            alt="Corail"
+                            loading="lazy">
+
+                        <h3>
+                            Le corail
+                        </h3>
+
+                        <p>
+                            Un animal marin qui forme des récifs accueillant
+                            de nombreuses espèces.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('corail')">
+
+                            Voir la fiche
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- IMAGE 11 : POISSON -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
+                            alt="Poisson sous l'eau"
+                            loading="lazy">
+
+                        <h3>
+                            Le poisson
+                        </h3>
+
+                        <p>
+                            Les poissons présentent des formes,
+                            des couleurs et des modes de vie variés.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('poisson')">
+
+                            Voir la fiche
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- IMAGE 12 : ALGUES -->
+
+                    <article class="marine-card">
+
+                        <img class="exploration-photo"
+                            src="https://www.district-immo.com/wp-content/uploads/2022/10/ARTICLES-BLOG-%C3%89T%C3%89-1-1.png"
+                            alt="Algues marines"
+                            loading="lazy">
+
+                        <h3>
+                            Les algues marines
+                        </h3>
+
+                        <p>
+                            Elles participent à la production d'oxygène
+                            et servent d'abri à de nombreuses espèces.
+                        </p>
+
+                        <button class="main-button exploration-action"
+                            onclick="openExplorationInfo('algue')">
+
+                            Voir la fiche
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             UNE JOURNÉE DE BIOLOGISTE MARINE
+        ================================================= -->
+
+        <section class="discover">
+
+            <div class="section-container">
+
+                <div class="center-title">
+
+                    <p class="small-title">
+                        DANS LA PEAU D'UNE SCIENTIFIQUE
+                    </p>
+
+                    <h2>
+                        Une journée de biologiste marine
+                    </h2>
+
+                    <p>
+                        Voici un exemple de journée consacrée à l'étude
+                        du monde marin.
+                    </p>
+
+                </div>
+
+
+                <div class="day-list">
+
+
+                    <article class="marine-card day-item">
+
+                        <span class="day-time">
+                            08h00
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Préparation du matériel
+                            </h3>
+
+                            <p>
+                                Vérification des instruments, des carnets
+                                et du matériel scientifique.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="marine-card day-item">
+
+                        <span class="day-time">
+                            09h30
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Observation sur le terrain
+                            </h3>
+
+                            <p>
+                                Observation des espèces et de leur
+                                environnement dans leur milieu naturel.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="marine-card day-item">
+
+                        <span class="day-time">
+                            12h00
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Analyse des observations
+                            </h3>
+
+                            <p>
+                                Première organisation des données et
+                                des observations recueillies.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="marine-card day-item">
+
+                        <span class="day-time">
+                            14h00
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Travail en laboratoire
+                            </h3>
+
+                            <p>
+                                Étude des échantillons et analyse des
+                                informations collectées.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="marine-card day-item">
+
+                        <span class="day-time">
+                            16h30
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Rédaction des résultats
+                            </h3>
+
+                            <p>
+                                Classement des données et préparation
+                                des conclusions scientifiques.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECTION FINALE
+        ===================================================== -->
+
+        <section class="final-section">
+
+            <div class="section-container">
+
+                <p class="small-title">
+                    PROTÉGER NOTRE PLANÈTE BLEUE
+                </p>
+
+                <h2>
+                    Les océans ont besoin de nous
+                </h2>
+
+                <p>
+                    La protection des océans est essentielle pour préserver
+                    la biodiversité marine et l'équilibre de notre planète.
+                </p>
+
+                <a href="regards.html" class="main-button">
+                    Découvrir le métier
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIED DE PAGE
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 - Biologie marine
+        </p>
+
+        <p>
+            Explorer, comprendre et protéger les océans.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ===================================================== -->
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        /* =====================================================
+           INFORMATIONS DES OCÉANS ET DES ESPÈCES
+        ===================================================== */
+
+        const explorationInformations = {
+
+            /* =================================================
+               OCÉANS
+            ================================================= */
+
+            pacifique: {
+
+                titre: "L'océan Pacifique",
+
+                contenu: `
+
+                    <p>
+                        L'océan Pacifique est le plus vaste océan de la Terre.
+                        Il s'étend entre l'Asie, l'Océanie et les Amériques.
+                    </p>
+
+                    <p>
+                        Il abrite une biodiversité exceptionnelle :
+                        récifs coralliens, poissons tropicaux, tortues,
+                        baleines et nombreuses autres espèces.
+                    </p>
+
+                    <p>
+                        Il est également confronté à plusieurs menaces,
+                        notamment la pollution plastique, le réchauffement
+                        de l'eau et la surpêche.
+                    </p>
+
+                `
+
+            },
+
+
+            atlantique: {
+
+                titre: "L'océan Atlantique",
+
+                contenu: `
+
+                    <p>
+                        L'océan Atlantique est le deuxième plus grand océan
+                        du monde. Il sépare notamment les continents américain,
+                        européen et africain.
+                    </p>
+
+                    <p>
+                        On y trouve des dauphins, des baleines, des requins,
+                        des tortues marines et de nombreuses espèces de poissons.
+                    </p>
+
+                    <p>
+                        Les scientifiques étudient notamment ses courants,
+                        sa biodiversité et les conséquences des activités humaines.
+                    </p>
+
+                `
+
+            },
+
+
+            indien: {
+
+                titre: "L'océan Indien",
+
+                contenu: `
+
+                    <p>
+                        L'océan Indien est situé entre l'Afrique,
+                        l'Asie et l'Australie.
+                    </p>
+
+                    <p>
+                        Il est connu pour ses eaux chaudes et ses écosystèmes
+                        tropicaux, notamment ses récifs coralliens.
+                    </p>
+
+                    <p>
+                        Ses récifs abritent de nombreuses espèces de poissons,
+                        de mollusques et de tortues marines.
+                    </p>
+
+                `
+
+            },
+
+
+            arctique: {
+
+                titre: "L'océan Arctique",
+
+                contenu: `
+
+                    <p>
+                        L'océan Arctique se trouve autour du pôle Nord.
+                        C'est le plus petit et l'un des océans les plus
+                        froids de la planète.
+                    </p>
+
+                    <p>
+                        Malgré les températures extrêmes, il accueille
+                        des espèces adaptées au froid, comme les phoques,
+                        les morses et certaines baleines.
+                    </p>
+
+                    <p>
+                        La fonte de la banquise liée au changement climatique
+                        menace l'équilibre de cet environnement.
+                    </p>
+
+                `
+
+            },
+
+
+            austral: {
+
+                titre: "L'océan Austral",
+
+                contenu: `
+
+                    <p>
+                        L'océan Austral entoure le continent antarctique.
+                        Ses eaux froides jouent un rôle important dans
+                        la circulation des courants océaniques.
+                    </p>
+
+                    <p>
+                        On y trouve notamment des manchots, des phoques,
+                        des baleines et du krill.
+                    </p>
+
+                    <p>
+                        Cet océan est particulièrement important pour
+                        l'étude du climat et des écosystèmes polaires.
+                    </p>
+
+                `
+
+            },
+
+
+            /* =================================================
+               TORTUE
+            ================================================= */
+
+            tortue: {
+
+                titre: "🐢 La tortue marine",
+
+                contenu: `
+
+                    <p>
+                        La tortue marine est un reptile qui vit dans
+                        les océans. Elle remonte à la surface pour
+                        respirer grâce à ses poumons.
+                    </p>
+
+                    <p>
+                        Selon l'espèce, elle peut se nourrir d'algues,
+                        de méduses, d'éponges ou d'autres organismes.
+                    </p>
+
+                    <p>
+                        Les tortues marines sont menacées par la pollution,
+                        les déchets plastiques et la dégradation de leurs
+                        lieux de ponte.
+                    </p>
+
+                    <div class="dolphin-fact">
+
+                        💡 <strong>Le savais-tu ?</strong><br>
+
+                        Certaines tortues marines peuvent parcourir
+                        plusieurs milliers de kilomètres au cours de leur vie.
+
+                    </div>
+
+                `
+
+            },
+
+
+            /* =================================================
+               REQUIN
+            ================================================= */
+
+            requin: {
+
+                titre: "🦈 Le requin",
+
+                contenu: `
+
+                    <p>
+                        Le requin est un poisson cartilagineux :
+                        son squelette est principalement constitué
+                        de cartilage et non d'os.
+                    </p>
+
+                    <p>
+                        Il existe de nombreuses espèces de requins,
+                        avec des tailles, des formes et des modes de vie
+                        très différents.
+                    </p>
+
+                    <p>
+                        Les requins jouent un rôle important dans
+                        l'équilibre des écosystèmes marins.
+                    </p>
+
+                    <div class="dolphin-fact">
+
+                        💡 <strong>Le savais-tu ?</strong><br>
+
+                        Il existe plus de 500 espèces de requins connues.
+
+                    </div>
+
+                `
+
+            },
+
+
+            /* =================================================
+               DAUPHIN
+            ================================================= */
+
+            dauphin: {
+
+                titre: "🐬 Dauphin : rose ou gris ?",
+
+                contenu: `
+
+                    <div class="dolphin-comparison">
+
+                        <p class="dolphin-intro">
+
+                            Le dauphin rose d'Amazonie et le grand dauphin
+                            sont deux espèces différentes. Même s'ils sont
+                            tous les deux des dauphins, leur habitat et
+                            certaines de leurs caractéristiques sont différents.
+
+                        </p>
+
+
+                        <div class="dolphin-comparison-grid">
+
+
+                            <!-- DAUPHIN ROSE -->
+
+                            <div class="dolphin-comparison-card dolphin-pink">
+
+                                <div class="dolphin-icon">
+                                    🩷
+                                </div>
+
+                                <h3>
+                                    Dauphin rose
+                                </h3>
+
+                                <p class="dolphin-scientific">
+                                    <em>Inia geoffrensis</em>
+                                </p>
+
+                                <ul>
+
+                                    <li>
+                                        🌊 <strong>Habitat :</strong>
+                                        rivières et zones inondées
+                                        d'Amérique du Sud
+                                    </li>
+
+                                    <li>
+                                        🩷 <strong>Couleur :</strong>
+                                        gris, rosé ou rose selon les individus
+                                    </li>
+
+                                    <li>
+                                        👃 <strong>Museau :</strong>
+                                        long et flexible
+                                    </li>
+
+                                    <li>
+                                        🐟 <strong>Alimentation :</strong>
+                                        principalement des poissons
+                                    </li>
+
+                                    <li>
+                                        💧 <strong>Milieu :</strong>
+                                        eau douce
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+
+                            <!-- GRAND DAUPHIN -->
+
+                            <div class="dolphin-comparison-card dolphin-grey">
+
+                                <div class="dolphin-icon">
+                                    🐬
+                                </div>
+
+                                <h3>
+                                    Grand dauphin
+                                </h3>
+
+                                <p class="dolphin-scientific">
+                                    <em>Tursiops truncatus</em>
+                                </p>
+
+                                <ul>
+
+                                    <li>
+                                        🌊 <strong>Habitat :</strong>
+                                        mers et océans
+                                    </li>
+
+                                    <li>
+                                        🩶 <strong>Couleur :</strong>
+                                        généralement gris
+                                    </li>
+
+                                    <li>
+                                        👃 <strong>Museau :</strong>
+                                        plus court et plus épais
+                                    </li>
+
+                                    <li>
+                                        🐟 <strong>Alimentation :</strong>
+                                        poissons et autres proies marines
+                                    </li>
+
+                                    <li>
+                                        💧 <strong>Milieu :</strong>
+                                        principalement eau salée
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EXPLICATION -->
+
+                        <div class="dolphin-difference">
+
+                            <h3>
+                                🔬 Quelle est la différence ?
+                            </h3>
+
+                            <p>
+
+                                Le dauphin rose d'Amazonie et le grand dauphin
+                                appartiennent à des espèces différentes.
+                                Le dauphin rose est adapté aux milieux d'eau
+                                douce d'Amérique du Sud, tandis que le grand
+                                dauphin vit principalement dans les mers
+                                et les océans.
+
+                            </p>
+
+
+                            <div class="dolphin-fact">
+
+                                💡 <strong>Le savais-tu ?</strong><br>
+
+                                Le dauphin rose d'Amazonie peut présenter
+                                une coloration plus rose chez certains individus,
+                                notamment avec l'âge.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                `
+
+            },
+
+
+            /* =================================================
+               CORAIL
+            ================================================= */
+
+            corail: {
+
+                titre: "🪸 Le corail",
+
+                contenu: `
+
+                    <p>
+                        Les coraux sont des animaux marins qui vivent
+                        souvent en colonies. Certains construisent
+                        progressivement de grands récifs.
+                    </p>
+
+                    <p>
+                        Ces récifs constituent des habitats essentiels
+                        pour de nombreuses espèces marines.
+                    </p>
+
+                    <p>
+                        Le réchauffement de l'eau et la pollution peuvent
+                        provoquer le blanchissement des coraux.
+                    </p>
+
+                    <div class="dolphin-fact">
+
+                        💡 <strong>Le savais-tu ?</strong><br>
+
+                        Un récif corallien est constitué par une multitude
+                        de petits organismes appelés polypes coralliens.
+
+                    </div>
+
+                `
+
+            },
+
+
+            /* =================================================
+               POISSON
+            ================================================= */
+
+            poisson: {
+
+                titre: "🐟 Les poissons",
+
+                contenu: `
+
+                    <p>
+                        Les poissons forment un groupe très diversifié
+                        d'animaux aquatiques.
+                    </p>
+
+                    <p>
+                        La plupart respirent grâce à leurs branchies
+                        et possèdent des adaptations leur permettant
+                        de vivre dans différents environnements.
+                    </p>
+
+                    <p>
+                        Ils occupent une place importante dans les chaînes
+                        alimentaires marines.
+                    </p>
+
+                    <div class="dolphin-fact">
+
+                        💡 <strong>Le savais-tu ?</strong><br>
+
+                        Certains poissons vivent près de la surface,
+                        tandis que d'autres peuvent vivre à plusieurs
+                        milliers de mètres de profondeur.
+
+                    </div>
+
+                `
+
+            },
+
+
+            /* =================================================
+               ALGUES
+            ================================================= */
+
+            algue: {
+
+                titre: "🌿 Les algues marines",
+
+                contenu: `
+
+                    <p>
+                        Les algues marines sont des organismes capables
+                        de réaliser la photosynthèse.
+                    </p>
+
+                    <p>
+                        Elles utilisent la lumière pour produire
+                        de la matière organique et participent
+                        au fonctionnement des écosystèmes marins.
+                    </p>
+
+                    <p>
+                        Elles peuvent également servir de nourriture
+                        et d'abri à de nombreuses espèces.
+                    </p>
+
+                    <div class="dolphin-fact">
+
+                        💡 <strong>Le savais-tu ?</strong><br>
+
+                        Certaines grandes algues forment de véritables
+                        forêts sous-marines appelées forêts de kelp.
+
+                    </div>
+
+                `
+
+            }
+
+        };
+
+
+        /* =====================================================
+           OUVRIR UNE FICHE
+        ===================================================== */
+
+        function openExplorationInfo(nom) {
+
+            const information = explorationInformations[nom];
+
+            if (!information) {
+
+                console.error(
+                    "Fiche d'exploration introuvable :",
+                    nom
+                );
+
+                return;
+            }
+
+
+            const popup =
+                document.getElementById("explorationPopup");
+
+            const popupText =
+                document.getElementById("explorationPopupText");
+
+
+            popupText.innerHTML = `
+
+                <p class="small-title">
+                    FICHE D'EXPLORATION
+                </p>
+
+                <h2 id="explorationPopupTitle">
+                    ${information.titre}
+                </h2>
+
+                ${information.contenu}
+
+            `;
+
+
+            popup.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+
+
+            const boutonFermer =
+                popup.querySelector(".close-button");
+
+            if (boutonFermer) {
+                boutonFermer.focus();
+            }
+
+        }
+
+
+        /* =====================================================
+           FERMER UNE FICHE
+        ===================================================== */
+
+        function closeExplorationInfo() {
+
+            const popup =
+                document.getElementById("explorationPopup");
+
+            if (!popup) {
+                return;
+            }
+
+            popup.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        /* =====================================================
+           FERMER EN CLIQUANT À L'EXTÉRIEUR
+        ===================================================== */
+
+        function closeExplorationOutside(event) {
+
+            if (
+                event.target &&
+                event.target.id === "explorationPopup"
+            ) {
+
+                closeExplorationInfo();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FERMER AVEC ÉCHAP
+        ===================================================== */
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                closeExplorationInfo();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

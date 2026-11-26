@@ -1,0 +1,1328 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Présentation | Biologie marine</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .card-icon {
+            width: 120px;
+            height: 100px;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border-radius: 14px;
+        }
+
+        .card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ocean-card-content img {
+            width: 110px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        #presentationPopupText [hidden] {
+            display: none !important;
+        }
+
+        /* ==========================================
+           JEU : MISSION BIOLOGISTE MARINE
+        ========================================== */
+
+        .mission-game {
+            padding: 85px 20px;
+            background: linear-gradient(135deg, #062d42, #087b8c);
+            color: white;
+        }
+
+        .mission-container {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .mission-game .small-title {
+            color: #83e8e6;
+        }
+
+        .mission-game h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .mission-intro {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+            color: #e0f6f5;
+        }
+
+        .mission-box {
+            background: white;
+            color: #173c4c;
+            border-radius: 22px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .mission-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #087b8c;
+        }
+
+        .mission-progress {
+            width: 100%;
+            height: 9px;
+            background: #dcebed;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .mission-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #16a6a0;
+            transition: width 0.4s ease;
+        }
+
+        .mission-image {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 22px;
+        }
+
+        .mission-number {
+            color: #07969a;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .mission-question {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #12394b;
+        }
+
+        .mission-options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .mission-option {
+            width: 100%;
+            padding: 15px 18px;
+            border: 2px solid #dcebed;
+            border-radius: 12px;
+            background: #f7fbfc;
+            color: #173c4c;
+            text-align: left;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .mission-option:hover:not(:disabled) {
+            border-color: #07969a;
+            background: #e8f8f7;
+            transform: translateY(-2px);
+        }
+
+        .mission-option:disabled {
+            cursor: default;
+            opacity: 1;
+        }
+
+        .mission-option.correct {
+            border-color: #249c64;
+            background: #e1f6e9;
+            color: #17683d;
+            font-weight: bold;
+        }
+
+        .mission-option.incorrect {
+            border-color: #d85b5b;
+            background: #fff0f0;
+            color: #a52d2d;
+        }
+
+        .mission-feedback {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 12px;
+            line-height: 1.6;
+            background: #edf6f7;
+            color: #173c4c;
+        }
+
+        .mission-feedback.correct-feedback {
+            background: #e1f6e9;
+            border-left: 5px solid #249c64;
+        }
+
+        .mission-feedback.incorrect-feedback {
+            background: #fff0f0;
+            border-left: 5px solid #d85b5b;
+        }
+
+        .mission-next,
+        .mission-restart {
+            display: block;
+            margin: 22px auto 0;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #087f8c;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .mission-next:hover,
+        .mission-restart:hover {
+            background: #07596b;
+            transform: translateY(-2px);
+        }
+
+        .mission-result {
+            text-align: center;
+            padding: 15px 5px;
+        }
+
+        .mission-result h3 {
+            font-size: 28px;
+            color: #087f8c;
+            margin-bottom: 15px;
+        }
+
+        .mission-final-score {
+            font-size: 42px;
+            font-weight: bold;
+            color: #087f8c;
+            margin: 20px 0;
+        }
+
+        .mission-result p {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .mission-box {
+                padding: 20px;
+            }
+
+            .mission-image {
+                height: 180px;
+            }
+
+            .mission-question {
+                font-size: 19px;
+            }
+
+            .mission-game {
+                padding: 60px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ==========================================
+     MENU
+========================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        BIO<span>MARINE</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="presentation.html" class="active">Présentation</a>
+        <a href="formation.html">Formation</a>
+        <a href="regards.html">Regards sur le métier</a>
+        <a href="exploration.html">Exploration</a>
+    </nav>
+
+</header>
+
+<!-- ==========================================
+     BULLES ANIMÉES
+========================================== -->
+
+<div class="bubbles">
+    <span class="bubble bubble-1"></span>
+    <span class="bubble bubble-2"></span>
+    <span class="bubble bubble-3"></span>
+    <span class="bubble bubble-4"></span>
+    <span class="bubble bubble-5"></span>
+    <span class="bubble bubble-6"></span>
+</div>
+
+<main>
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">PAGE 02 — PRÉSENTATION</p>
+
+        <h1>
+            AU CŒUR
+            <span>DES OCÉANS</span>
+        </h1>
+
+        <p class="subtitle">
+            Découvrir • Observer • Comprendre
+        </p>
+
+        <p class="intro">
+            La chercheuse en biologie marine est une scientifique
+            spécialisée dans l'étude des êtres vivants qui peuplent
+            les mers et les océans.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#metier" class="main-button">
+                Découvrir ses missions
+                <span>↓</span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="light-effect"></div>
+
+</section>
+
+<!-- ==========================================
+     PRÉSENTATION DU MÉTIER
+========================================== -->
+
+<section class="discover" id="metier">
+
+    <div class="section-container">
+
+        <div class="section-text">
+
+            <p class="small-title">LE MÉTIER</p>
+
+            <h2>Une scientifique au service de l'océan</h2>
+
+            <p>
+                La chercheuse en biologie marine étudie les organismes
+                qui vivent dans les environnements marins. Elle cherche
+                à comprendre leur fonctionnement, leur comportement,
+                leur développement et leurs interactions avec leur
+                environnement.
+            </p>
+
+            <p>
+                Son travail permet d'améliorer les connaissances
+                scientifiques sur les océans. Elle peut également
+                participer à des recherches destinées à mieux comprendre
+                les conséquences de la pollution, du réchauffement
+                climatique ou de la disparition de certaines espèces.
+            </p>
+
+            <p>
+                Ce métier associe donc observation, expérimentation,
+                analyse scientifique et travail en équipe.
+            </p>
+
+        </div>
+
+        <div class="ocean-card">
+
+            <div class="ocean-card-content">
+
+                <h3>SCIENCE & OCÉAN</h3>
+
+                <p>
+                    Observer le vivant pour mieux comprendre
+                    les écosystèmes marins.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     LES MISSIONS
+========================================== -->
+
+<section class="explore">
+
+    <div class="section-container">
+
+        <div class="center-title">
+
+            <p class="small-title">SES MISSIONS</p>
+
+            <h2>Que fait-elle au quotidien ?</h2>
+
+            <p>
+                Le métier est très varié. Une chercheuse peut passer
+                d'une mission de terrain à un travail en laboratoire
+                ou devant un ordinateur.
+            </p>
+
+            <p>
+                Clique sur une carte pour découvrir ses missions.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="marine-card"
+                 onclick="openPresentationCard('observer')">
+
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400"
+                        alt="Observation de la vie marine">
+                </div>
+
+                <h3>OBSERVER</h3>
+                <p>Étudier les espèces marines.</p>
+                <span class="plus">+</span>
+
+            </div>
+
+            <div class="marine-card"
+                 onclick="openPresentationCard('samples')">
+
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400"
+                        alt="Prélèvements scientifiques">
+                </div>
+
+                <h3>PRÉLEVER</h3>
+                <p>Collecter des échantillons.</p>
+                <span class="plus">+</span>
+
+            </div>
+
+            <div class="marine-card"
+                 onclick="openPresentationCard('analyze')">
+
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400"
+                        alt="Analyse scientifique">
+                </div>
+
+                <h3>ANALYSER</h3>
+                <p>Étudier les résultats.</p>
+                <span class="plus">+</span>
+
+            </div>
+
+            <div class="marine-card"
+                 onclick="openPresentationCard('communicate')">
+
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400"
+                        alt="Équipe de scientifiques">
+                </div>
+
+                <h3>COMMUNIQUER</h3>
+                <p>Partager les découvertes.</p>
+                <span class="plus">+</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+  
+<!-- ==========================================
+     BIOLOGIE MARINE ET PROGRÈS DE LA MÉDECINE
+========================================== -->
+
+<section class="discover">
+
+    <div class="section-container">
+
+        <div class="section-text">
+
+            <p class="small-title">BIOLOGIE MARINE & MÉDECINE</p>
+
+            <h2>Quand l'océan contribue aux progrès de la médecine</h2>
+
+            <p>
+                La biologie marine ne sert pas uniquement à étudier
+                et à protéger les océans. Elle contribue également
+                aux avancées médicales. En étudiant les organismes
+                marins, les scientifiques découvrent des molécules
+                naturelles qui peuvent être utilisées pour développer
+                de nouveaux médicaments.
+            </p>
+
+            <p>
+                <strong>La lutte contre le cancer :</strong>
+                certaines substances découvertes chez les éponges
+                marines ont inspiré la création de médicaments comme
+                la cytarabine, utilisée notamment dans le traitement
+                de certaines leucémies.
+            </p>
+
+            <p>
+                <strong>Le traitement de la douleur :</strong>
+                le venin de certains escargots marins, appelés cônes,
+                contient des molécules qui ont permis de développer
+                le ziconotide, un médicament utilisé contre certaines
+                douleurs chroniques sévères.
+            </p>
+
+            <p>
+                <strong>La recherche contre les cancers :</strong>
+                des organismes marins comme les tuniciers ont permis
+                d'identifier des substances à l'origine de médicaments
+                anticancéreux, comme la trabectédine.
+            </p>
+
+            <p>
+                Ces découvertes montrent que les océans représentent
+                une véritable source d'inspiration pour la recherche
+                pharmaceutique. Les biologistes marins jouent donc
+                un rôle important dans l'identification et l'étude
+                de ces organismes.
+            </p>
+
+        </div>
+
+        <div class="ocean-card">
+
+            <div class="ocean-card-content">
+
+                <h3>LA MER AU SERVICE DE LA SANTÉ</h3>
+
+                <p>
+                    Des éponges aux escargots marins, la biodiversité
+                    océanique offre des molécules qui peuvent aider
+                    les chercheurs à développer de nouveaux traitements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     ENVIRONNEMENT DE TRAVAIL
+========================================== -->
+
+<section class="discover">
+
+    <div class="section-container">
+
+        <div class="ocean-card">
+
+            <div class="ocean-card-content">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518467166778-b88f373ffec7?w=400"
+                    alt="Paysage sous-marin">
+
+                <h3>SUR LE TERRAIN</h3>
+
+                <p>
+                    La chercheuse peut participer à des missions
+                    scientifiques en mer, observer les organismes
+                    dans leur milieu naturel et recueillir des données.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="section-text">
+
+            <p class="small-title">SON ENVIRONNEMENT</p>
+
+            <h2>Entre mer et laboratoire</h2>
+
+            <p>
+                Le travail ne se déroule pas uniquement sous l'eau.
+                Une chercheuse en biologie marine peut travailler
+                dans un laboratoire, une université, un centre de
+                recherche ou une station scientifique.
+            </p>
+
+            <p>
+                Elle peut également partir plusieurs jours ou plusieurs
+                semaines en mission à bord d'un bateau scientifique
+                afin de recueillir des informations directement dans
+                le milieu marin.
+            </p>
+
+            <p>
+                Elle travaille souvent avec d'autres scientifiques :
+                biologistes, écologues, océanographes, chimistes ou
+                spécialistes des données.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     BIODIVERSITÉ MARINE
+========================================== -->
+
+<section class="explore">
+
+    <div class="section-container">
+
+        <div class="center-title">
+
+            <p class="small-title">LA BIODIVERSITÉ MARINE</p>
+
+            <h2>Un monde extrêmement varié</h2>
+
+            <p>
+                Les recherches peuvent porter sur de nombreux
+                organismes et écosystèmes.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="marine-card">
+                <div class="card-icon">
+                    <img
+                        src="https://static.nationalgeographic.fr/files/styles/image_3200/public/01-whales-carbon.jpg?h=1067&w=1600"
+                        alt="Baleine à bosse nageant sous l'eau">
+                </div>
+                <h3>MAMMIFÈRES</h3>
+                <p>Baleines, dauphins et phoques.</p>
+            </div>
+
+            <div class="marine-card">
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400"
+                        alt="Tortue marine">
+                </div>
+                <h3>REPTILES</h3>
+                <p>Tortues marines et autres espèces.</p>
+            </div>
+
+            <div class="marine-card">
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=400"
+                        alt="Récif de corail">
+                </div>
+                <h3>CORAUX</h3>
+                <p>Des écosystèmes essentiels.</p>
+            </div>
+
+            <div class="marine-card">
+                <div class="card-icon">
+                    <img
+                        src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400"
+                        alt="Poissons tropicaux">
+                </div>
+                <h3>POISSONS</h3>
+                <p>Une biodiversité très importante.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     NOUVEAU JEU : MISSION BIOLOGISTE MARINE
+========================================== -->
+
+<section class="mission-game" id="mission-jeu">
+
+    <div class="mission-container">
+
+        <p class="small-title">À TOI DE JOUER !</p>
+
+        <h2>Mission biologiste marine</h2>
+
+        <p class="mission-intro">
+            Tu viens d'intégrer une équipe de recherche marine.
+            Cinq missions t'attendent pour tester tes connaissances
+            scientifiques. À toi de prendre les bonnes décisions !
+        </p>
+
+        <div class="mission-box">
+
+            <div class="mission-top">
+
+                <span id="missionNumber">MISSION 1 / 5</span>
+
+                <span id="missionScore">Score : 0</span>
+
+            </div>
+
+            <div class="mission-progress">
+
+                <div
+                    class="mission-progress-bar"
+                    id="missionProgress">
+                </div>
+
+            </div>
+
+            <img
+                id="missionImage"
+                class="mission-image"
+                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900"
+                alt="Mission scientifique en milieu marin">
+
+            <p class="mission-number" id="missionLabel">
+                MISSION 01
+            </p>
+
+            <h3
+                class="mission-question"
+                id="missionQuestion">
+                Quel matériel choisirais-tu pour observer le comportement
+                des poissons sous l'eau ?
+            </h3>
+
+            <div
+                class="mission-options"
+                id="missionOptions">
+            </div>
+
+            <div
+                class="mission-feedback"
+                id="missionFeedback"
+                hidden>
+            </div>
+
+            <button
+                class="mission-next"
+                id="missionNext"
+                onclick="nextResearchMission()"
+                hidden>
+                Mission suivante
+            </button>
+
+            <div
+                class="mission-result"
+                id="missionResult"
+                hidden>
+
+                <h3>Mission terminée !</h3>
+
+                <p>Voici ton résultat :</p>
+
+                <div
+                    class="mission-final-score"
+                    id="missionFinalScore">
+                    0 / 5
+                </div>
+
+                <p id="missionFinalMessage"></p>
+
+                <button
+                    class="mission-restart"
+                    onclick="restartResearchMission()">
+                    Recommencer les missions
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     FIN DE PAGE
+========================================== -->
+
+<section class="final-section">
+
+    <div class="final-content">
+
+        <p class="small-title">L'IMPORTANCE DE LA RECHERCHE</p>
+
+        <h2>Comprendre pour mieux protéger</h2>
+
+        <p>
+            En étudiant les océans et leurs habitants,
+            les chercheurs contribuent à mieux comprendre
+            les changements qui touchent les écosystèmes marins.
+
+            Leurs travaux peuvent aider à préserver la biodiversité
+            et à mieux protéger les milieux naturels.
+        </p>
+
+        <a href="formation.html" class="main-button">
+            Découvrir la formation
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     FENÊTRES EXPLICATIVES
+========================================== -->
+
+<div id="presentationPopup" class="popup">
+
+    <div class="popup-content">
+
+        <button class="close-button"
+                onclick="closePresentationCard()">
+            ×
+        </button>
+
+        <div id="presentationPopupText">
+
+            <div id="info-observer" hidden>
+
+                <p class="small-title">01 — OBSERVER</p>
+
+                <h2>Observer les espèces marines</h2>
+
+                <p>
+                    La chercheuse observe les animaux et les organismes
+                    marins dans leur environnement naturel. Elle étudie
+                    leur comportement, leur alimentation et leurs relations
+                    avec les autres espèces.
+                </p>
+
+                <p>
+                    Elle peut utiliser des appareils photo, des caméras
+                    sous-marines et des instruments de mesure pour
+                    recueillir des informations.
+                </p>
+
+                <p>
+                    Ces observations permettent de mieux comprendre
+                    le fonctionnement des écosystèmes marins et les
+                    besoins des différentes espèces.
+                </p>
+
+            </div>
+
+            <div id="info-samples" hidden>
+
+                <p class="small-title">02 — PRÉLEVER</p>
+
+                <h2>Collecter des échantillons</h2>
+
+                <p>
+                    La chercheuse prélève parfois de l'eau, du sable,
+                    du plancton ou d'autres échantillons afin de les étudier.
+                </p>
+
+                <p>
+                    Ces prélèvements sont ensuite analysés en laboratoire.
+                    Ils permettent de mieux comprendre la composition
+                    de l'eau et la présence de différents organismes.
+                </p>
+
+                <p>
+                    Les échantillons doivent être recueillis et conservés
+                    avec soin afin que les résultats des analyses soient
+                    fiables.
+                </p>
+
+            </div>
+
+            <div id="info-analyze" hidden>
+
+                <p class="small-title">03 — ANALYSER</p>
+
+                <h2>Étudier les résultats</h2>
+
+                <p>
+                    Après les observations et les prélèvements, la
+                    chercheuse examine les données recueillies.
+                    Elle utilise des microscopes, des outils informatiques
+                    et différentes méthodes scientifiques.
+                </p>
+
+                <p>
+                    Elle compare les résultats, recherche des liens
+                    entre les phénomènes observés et vérifie ses
+                    hypothèses de départ.
+                </p>
+
+                <p>
+                    L'analyse permet d'obtenir de nouvelles connaissances
+                    sur les océans et les organismes qui y vivent.
+                </p>
+
+            </div>
+
+            <div id="info-communicate" hidden>
+
+                <p class="small-title">04 — COMMUNIQUER</p>
+
+                <h2>Partager les découvertes</h2>
+
+                <p>
+                    La chercheuse présente les résultats de ses travaux
+                    à d'autres scientifiques et rédige des publications.
+                </p>
+
+                <p>
+                    Elle peut également participer à des conférences,
+                    des réunions scientifiques ou des projets de
+                    sensibilisation.
+                </p>
+
+                <p>
+                    Partager les découvertes permet de faire avancer
+                    la recherche et de mieux faire connaître l'importance
+                    de préserver les océans.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+     PIED DE PAGE
+========================================== -->
+
+<footer>
+
+    <p>© 2026 — Chercheuse en biologie marine</p>
+
+    <p>Explorer • Comprendre • Protéger</p>
+
+</footer>
+
+<!-- ==========================================
+     SCRIPT DES FENÊTRES
+========================================== -->
+
+<script src="script.js"></script>
+
+<script>
+
+/* ==========================================
+   FENÊTRES EXPLICATIVES
+========================================== */
+
+function openPresentationCard(type) {
+
+    const popup = document.getElementById("presentationPopup");
+    const popupText = document.getElementById("presentationPopupText");
+
+    const informations = {
+        observer: "info-observer",
+        samples: "info-samples",
+        analyze: "info-analyze",
+        communicate: "info-communicate"
+    };
+
+    const contenu = informations[type];
+
+    if (!popup || !popupText || !contenu) {
+        console.error("Information introuvable :", type);
+        return;
+    }
+
+    popupText.querySelectorAll("[id^='info-']").forEach(function(element) {
+        element.hidden = true;
+    });
+
+    document.getElementById(contenu).hidden = false;
+
+    popup.classList.add("show");
+}
+
+function closePresentationCard() {
+
+    const popup = document.getElementById("presentationPopup");
+
+    if (popup) {
+        popup.classList.remove("show");
+    }
+
+}
+
+document.addEventListener("click", function(event) {
+
+    const popup = document.getElementById("presentationPopup");
+
+    if (popup && event.target === popup) {
+        closePresentationCard();
+    }
+
+});
+
+/* ==========================================
+   QUESTIONS DU JEU
+========================================== */
+
+const researchMissions = [
+
+    {
+        label: "MISSION 01 — LE MATÉRIEL",
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900",
+        alt: "Observation sous-marine",
+        question: "Tu dois observer le comportement des poissons dans leur milieu naturel. Quel matériel est le plus adapté ?",
+        answers: [
+            "Une caméra sous-marine",
+            "Un thermomètre médical",
+            "Un télescope astronomique",
+            "Une balance de cuisine"
+        ],
+        correct: 0,
+        explanation: "Une caméra sous-marine permet d'enregistrer les comportements des poissons sans devoir les capturer. Les chercheurs peuvent ensuite analyser les vidéos."
+    },
+
+    {
+        label: "MISSION 02 — IDENTIFIER UNE ESPÈCE",
+        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=900",
+        alt: "Tortue marine",
+        question: "Tu observes une tortue marine. Quel caractère permet de la classer parmi les reptiles ?",
+        answers: [
+            "Elle possède des nageoires",
+            "Elle respire grâce à des poumons",
+            "Elle vit dans l'eau salée",
+            "Elle se nourrit de végétaux"
+        ],
+        correct: 1,
+        explanation: "La tortue marine est un reptile. Même si elle vit dans l'eau, elle respire avec des poumons et doit remonter à la surface pour prendre de l'air."
+    },
+
+    {
+        label: "MISSION 03 — ANALYSER L'EAU",
+        image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=900",
+        alt: "Analyse scientifique en laboratoire",
+        question: "Une analyse révèle une forte concentration de nutriments et une faible quantité d'oxygène dissous. Quel phénomène peut expliquer cette situation ?",
+        answers: [
+            "La photosynthèse des coraux",
+            "L'eutrophisation",
+            "La formation des marées",
+            "La migration des poissons"
+        ],
+        correct: 1,
+        explanation: "L'eutrophisation est liée à un apport excessif de nutriments. La prolifération d'algues puis leur décomposition peuvent consommer beaucoup d'oxygène dissous."
+    },
+
+    {
+        label: "MISSION 04 — COMPRENDRE LE RÉCIF",
+        image: "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=900",
+        alt: "Récif corallien",
+        question: "Tu observes un blanchissement des coraux après une période de forte chaleur. Quelle explication scientifique est la plus probable ?",
+        answers: [
+            "Les coraux deviennent des poissons",
+            "Les coraux expulsent leurs algues symbiotiques",
+            "Les coraux produisent davantage de coquilles",
+            "L'eau de mer devient entièrement douce"
+        ],
+        correct: 1,
+        explanation: "Un stress thermique peut provoquer l'expulsion des algues symbiotiques vivant dans les coraux. Les coraux perdent alors une grande partie de leur couleur et de leur source d'énergie."
+    },
+
+    {
+        label: "MISSION 05 — PRENDRE UNE DÉCISION",
+        image: "https://images.unsplash.com/photo-1518467166778-b88f373ffec7?w=900",
+        alt: "Écosystème marin",
+        question: "Tu veux comparer la biodiversité de deux récifs coralliens. Quelle méthode scientifique est la plus fiable ?",
+        answers: [
+            "Observer un seul poisson dans chaque récif",
+            "Choisir le récif qui semble le plus joli",
+            "Réaliser plusieurs relevés comparables sur les deux récifs",
+            "Interroger uniquement les touristes"
+        ],
+        correct: 2,
+        explanation: "Pour comparer deux milieux, il faut utiliser un protocole identique et répéter les relevés. Cela permet d'obtenir des résultats plus fiables et représentatifs."
+    }
+
+];
+
+/* ==========================================
+   VARIABLES DU JEU
+========================================== */
+
+let currentResearchMission = 0;
+let researchScore = 0;
+
+/* ==========================================
+   AFFICHER UNE MISSION
+========================================== */
+
+function displayResearchMission() {
+
+    const mission = researchMissions[currentResearchMission];
+
+    const number = document.getElementById("missionNumber");
+    const score = document.getElementById("missionScore");
+    const progress = document.getElementById("missionProgress");
+
+    const image = document.getElementById("missionImage");
+    const label = document.getElementById("missionLabel");
+    const question = document.getElementById("missionQuestion");
+    const options = document.getElementById("missionOptions");
+
+    const feedback = document.getElementById("missionFeedback");
+    const next = document.getElementById("missionNext");
+    const result = document.getElementById("missionResult");
+
+    number.textContent =
+        `MISSION ${currentResearchMission + 1} / ${researchMissions.length}`;
+
+    score.textContent = `Score : ${researchScore}`;
+
+    progress.style.width =
+        `${((currentResearchMission + 1) / researchMissions.length) * 100}%`;
+
+    image.src = mission.image;
+    image.alt = mission.alt;
+
+    label.textContent = mission.label;
+    question.textContent = mission.question;
+
+    options.innerHTML = "";
+
+    feedback.hidden = true;
+    next.hidden = true;
+    result.hidden = true;
+
+    mission.answers.forEach(function(answer, index) {
+
+        const button = document.createElement("button");
+
+        button.className = "mission-option";
+        button.textContent = answer;
+
+        button.addEventListener("click", function() {
+            answerResearchMission(index);
+        });
+
+        options.appendChild(button);
+
+    });
+
+}
+
+/* ==========================================
+   VÉRIFIER LA RÉPONSE
+========================================== */
+
+function answerResearchMission(selectedIndex) {
+
+    const mission = researchMissions[currentResearchMission];
+
+    const options = document.querySelectorAll(".mission-option");
+    const feedback = document.getElementById("missionFeedback");
+    const next = document.getElementById("missionNext");
+    const score = document.getElementById("missionScore");
+
+    options.forEach(function(button) {
+        button.disabled = true;
+    });
+
+    if (selectedIndex === mission.correct) {
+
+        researchScore++;
+
+        options[selectedIndex].classList.add("correct");
+
+        feedback.textContent =
+            "Bonne réponse ! " + mission.explanation;
+
+        feedback.className =
+            "mission-feedback correct-feedback";
+
+    } else {
+
+        options[selectedIndex].classList.add("incorrect");
+
+        options[mission.correct].classList.add("correct");
+
+        feedback.textContent =
+            "Ce n'est pas la bonne réponse. " + mission.explanation;
+
+        feedback.className =
+            "mission-feedback incorrect-feedback";
+
+    }
+
+    feedback.hidden = false;
+
+    score.textContent = `Score : ${researchScore}`;
+
+    next.hidden = false;
+
+    if (currentResearchMission === researchMissions.length - 1) {
+        next.textContent = "Découvrir mon résultat";
+    } else {
+        next.textContent = "Mission suivante";
+    }
+
+}
+
+/* ==========================================
+   PASSER À LA MISSION SUIVANTE
+========================================== */
+
+function nextResearchMission() {
+
+    currentResearchMission++;
+
+    if (currentResearchMission < researchMissions.length) {
+
+        displayResearchMission();
+
+    } else {
+
+        showResearchResult();
+
+    }
+
+}
+
+/* ==========================================
+   AFFICHER LE RÉSULTAT FINAL
+========================================== */
+
+function showResearchResult() {
+
+    document.getElementById("missionImage").hidden = true;
+    document.getElementById("missionLabel").hidden = true;
+    document.getElementById("missionQuestion").hidden = true;
+    document.getElementById("missionOptions").hidden = true;
+
+    document.getElementById("missionFeedback").hidden = true;
+    document.getElementById("missionNext").hidden = true;
+
+    const result = document.getElementById("missionResult");
+
+    const finalScore = document.getElementById("missionFinalScore");
+    const finalMessage = document.getElementById("missionFinalMessage");
+
+    result.hidden = false;
+
+    finalScore.textContent =
+        `${researchScore} / ${researchMissions.length}`;
+
+    if (researchScore === 5) {
+
+        finalMessage.textContent =
+            "Exceptionnel ! Tu as réussi toutes les missions. Tu as de très bonnes connaissances en biologie marine !";
+
+    } else if (researchScore >= 4) {
+
+        finalMessage.textContent =
+            "Bravo ! Tu as presque tout réussi. Ton esprit scientifique est bien développé !";
+
+    } else if (researchScore >= 2) {
+
+        finalMessage.textContent =
+            "Bon travail ! Tu progresses. Relis les explications pour approfondir tes connaissances.";
+
+    } else {
+
+        finalMessage.textContent =
+            "La recherche demande de la curiosité et de l'entraînement. Continue à apprendre sur les océans !";
+
+    }
+
+}
+
+/* ==========================================
+   RECOMMENCER LE JEU
+========================================== */
+
+function restartResearchMission() {
+
+    currentResearchMission = 0;
+    researchScore = 0;
+
+    document.getElementById("missionImage").hidden = false;
+    document.getElementById("missionLabel").hidden = false;
+    document.getElementById("missionQuestion").hidden = false;
+    document.getElementById("missionOptions").hidden = false;
+
+    displayResearchMission();
+
+}
+
+/* ==========================================
+   LANCEMENT DU JEU
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    displayResearchMission();
+
+});
+
+</script>
+
+</body>
+</html>

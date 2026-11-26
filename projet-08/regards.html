@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regards sur le métier | Biologie marine</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .card-icon {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mini-image {
+            width: 130px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            BIO<span>MARINE</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Présentation</a>
+            <a href="formation.html">Formation</a>
+            <a href="regards.html" class="active">Regards sur le métier</a>
+            <a href="exploration.html">Exploration</a>
+        </nav>
+
+    </header>
+
+    <!-- BULLES ANIMÉES -->
+
+    <div class="bubbles">
+        <span class="bubble bubble-1"></span>
+        <span class="bubble bubble-2"></span>
+        <span class="bubble bubble-3"></span>
+        <span class="bubble bubble-4"></span>
+        <span class="bubble bubble-5"></span>
+        <span class="bubble bubble-6"></span>
+    </div>
+
+    <!-- PAGE REGARDS SUR LE MÉTIER -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    DANS LES COULISSES DE LA SCIENCE
+                </p>
+
+                <h1>
+                    REGARDS
+                    <span>SUR LE MÉTIER</span>
+                </h1>
+
+                <p class="subtitle">
+                    Observer • Découvrir • Transmettre
+                </p>
+
+                <p class="intro">
+                    Découvrons le quotidien d'une chercheuse en
+                    biologie marine, ses expériences, ses outils
+                    et les défis auxquels elle fait face.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#quotidien" class="main-button">
+                        Explorer son quotidien
+                        <span>→</span>
+                    </a>
+
+                    <button class="info-button" onclick="openInfo()">
+                        En savoir plus
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="light-effect"></div>
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+
+        </section>
+
+        <!-- FENÊTRE D'INFORMATION -->
+
+        <div id="infoBox" class="info-box">
+
+            <button class="close-button" onclick="closeInfo()">×</button>
+
+            <div class="info-content">
+
+                <p class="small-title">LE SAVIEZ-VOUS ?</p>
+
+                <h2>Un métier aux multiples facettes</h2>
+
+                <p>
+                    Une chercheuse en biologie marine ne passe pas
+                    tout son temps sous l'eau ! Une grande partie
+                    de son travail se déroule en laboratoire,
+                    devant un ordinateur ou en équipe avec
+                    d'autres scientifiques.
+                </p>
+
+                <p>
+                    Elle peut également partir en mission sur le
+                    terrain pour observer les espèces, recueillir
+                    des informations et étudier les écosystèmes marins.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PRÉSENTATION DU QUOTIDIEN -->
+
+        <section class="discover" id="quotidien">
+
+            <div class="section-container">
+
+                <div class="section-text">
+
+                    <p class="small-title">AU CŒUR DE SON QUOTIDIEN</p>
+
+                    <h2>Une journée pleine de découvertes</h2>
+
+                    <p>
+                        Le quotidien d'une chercheuse en biologie
+                        marine varie selon ses projets et son lieu
+                        de travail. Certaines journées sont consacrées
+                        aux observations sur le terrain.
+                    </p>
+
+                    <p>
+                        D'autres se déroulent au laboratoire :
+                        elle étudie des échantillons, utilise des
+                        instruments scientifiques et réalise
+                        différentes expériences.
+                    </p>
+
+                    <p>
+                        Elle passe également du temps à analyser
+                        ses résultats, rédiger des rapports et
+                        échanger avec d'autres chercheurs.
+                    </p>
+
+                    <button class="read-more" onclick="showMore()">
+                        En savoir plus +
+                    </button>
+
+                    <div id="moreText" class="more-text">
+
+                        <p>
+                            Les missions scientifiques peuvent
+                            parfois l'amener à voyager, à travailler
+                            en équipe sur un bateau ou à participer
+                            à des projets internationaux.
+                            Chaque journée peut donc être différente
+                            et apporter de nouvelles découvertes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="ocean-card">
+
+                    <div class="ocean-card-content">
+
+                        <h3>UN MÉTIER PASSIONNANT</h3>
+
+                        <p>
+                            Entre les laboratoires, les océans
+                            et les missions scientifiques,
+                            aucune recherche ne ressemble
+                            complètement à une autre.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 4 CARTES INTERACTIVES -->
+
+        <section class="explore">
+
+            <div class="section-container">
+
+                <div class="center-title">
+
+                    <p class="small-title">
+                        LES DIFFÉRENTS ASPECTS DU MÉTIER
+                    </p>
+
+                    <h2>Découvrir • Analyser • Protéger</h2>
+
+                    <p>
+                        Cliquez sur une carte pour découvrir
+                        une autre facette de cette profession.
+                    </p>
+
+                </div>
+
+                <div class="cards">
+
+                    <!-- CARTE 1 : LE QUOTIDIEN -->
+
+                    <div class="marine-card"
+                         onclick="openCard('research')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg"
+                                alt="Chercheuse travaillant sur ordinateur">
+
+                        </div>
+
+                        <h3>LE QUOTIDIEN</h3>
+                        <p>Une journée de recherche.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                    <!-- CARTE 2 : LE MATÉRIEL -->
+
+                    <div class="marine-card"
+                         onclick="openCard('explore')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/4031320/pexels-photo-4031320.jpeg"
+                                alt="Matériel de laboratoire et microscope">
+
+                        </div>
+
+                        <h3>LE MATÉRIEL</h3>
+                        <p>Les outils des scientifiques.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                    <!-- CARTE 3 : LES DÉFIS -->
+
+                    <div class="marine-card"
+                         onclick="openCard('observe')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg"
+                                alt="Expérience scientifique en laboratoire">
+
+                        </div>
+
+                        <h3>LES DÉFIS</h3>
+                        <p>Les difficultés et les découvertes.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                    <!-- CARTE 4 : PROTÉGER L'OCÉAN -->
+
+                    <div class="marine-card"
+                         onclick="openCard('protect')">
+
+                        <div class="card-icon">
+
+                            <img
+                                src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg"
+                                alt="Vie marine et protection des océans">
+
+                        </div>
+
+                        <h3>PROTÉGER L'OCÉAN</h3>
+                        <p>Agir pour l'avenir marin.</p>
+                        <span class="plus">+</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- POP-UP DES CARTES -->
+
+        <div id="cardPopup" class="popup">
+
+            <div class="popup-content">
+
+                <button class="close-button" onclick="closeCard()">
+                    ×
+                </button>
+
+                <div id="popupText"></div>
+
+            </div>
+
+        </div>
+
+        <!-- JEU : LE LABORATOIRE DES MYSTÈRES MARINS -->
+
+        <section class="mystery-game" id="jeu-enquete">
+
+            <div class="mystery-container">
+
+                <p class="small-title">À TOI DE MENER L'ENQUÊTE !</p>
+
+                <h2>Le laboratoire des mystères marins</h2>
+
+                <p class="mystery-intro">
+                    Un phénomène étrange a été observé dans l'océan.
+                    Examine les indices, formule ton hypothèse
+                    et découvre ce qui se passe dans cet écosystème.
+                </p>
+
+                <div class="mystery-progress">
+                    <div id="mysteryProgress"></div>
+                </div>
+
+                <p id="mysteryNumber">ENQUÊTE 1 / 4</p>
+
+                <div class="mystery-card">
+
+                    <img
+                        id="mysteryImage"
+                        src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg"
+                        alt="Récif corallien sous-marin">
+
+                    <h3 id="mysteryTitle">
+                        Le mystère du récif
+                    </h3>
+
+                    <p id="mysteryClue">
+                        Des coraux perdent leurs couleurs.
+                        Quel phénomène pourrait expliquer cette observation ?
+                    </p>
+
+                    <div id="mysteryOptions" class="mystery-options">
+
+                        <button type="button" class="mystery-option"
+                            onclick="answerMystery(0)">
+                            Une augmentation de la température de l'eau
+                        </button>
+
+                        <button type="button" class="mystery-option"
+                            onclick="answerMystery(1)">
+                            Une augmentation de la salinité uniquement
+                        </button>
+
+                        <button type="button" class="mystery-option"
+                            onclick="answerMystery(2)">
+                            Une disparition des courants marins
+                        </button>
+
+                    </div>
+
+                    <p id="mysteryFeedback" aria-live="polite"></p>
+
+                    <button
+                        type="button"
+                        id="mysteryNext"
+                        onclick="nextMystery()"
+                        hidden>
+                        Enquête suivante
+                    </button>
+
+                    <div id="mysteryResult" hidden>
+
+                        <h3>Enquête terminée !</h3>
+
+                        <p id="mysteryFinalScore"></p>
+
+                        <p id="mysteryFinalMessage"></p>
+
+                        <button
+                            type="button"
+                            onclick="restartMystery()">
+                            Recommencer l'enquête
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FIN DE PAGE -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <p class="small-title">UN ENGAGEMENT POUR DEMAIN</p>
+
+                <h2>Comprendre pour mieux protéger</h2>
+
+                <p>
+                    La recherche en biologie marine permet
+                    de mieux connaître les océans et de contribuer
+                    à la préservation de leur incroyable biodiversité.
+                </p>
+
+                <a href="index.html" class="main-button">
+                    Retour à l'accueil
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIED DE PAGE -->
+
+    <footer>
+
+        <p>© 2026 — Chercheuse en biologie marine</p>
+        <p>Explorer • Comprendre • Protéger</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="jeu-enquete.js"></script>
+
+</body>
+</html>
