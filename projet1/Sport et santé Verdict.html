@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 - Verdict | Sport & Santé</title>
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f6fa;color:#263448;line-height:1.75}
+header{background:linear-gradient(120deg,#101d32e8,#173e57bb),url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400') center/cover;color:white;padding:25px 8% 85px}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:22px;font-weight:900;color:#24c6b5}
+nav a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+.hero{max-width:750px;margin:100px auto 20px}
+.hero small{color:#24c6b5;letter-spacing:4px;font-weight:bold}
+h1{font-size:clamp(38px,6vw,60px);line-height:1.15}
+.hero p{font-size:18px;color:#e0eaf3}
+main{max-width:1050px;margin:auto;padding:60px 25px}
+.tag{color:#079d91;font-size:13px;font-weight:bold;letter-spacing:3px}
+h2{font-size:33px;color:#102238}
+.verdict{background:linear-gradient(135deg,#d8f7ee,#eaf5fc);padding:40px;border-radius:17px;border-left:6px solid #19b69f}
+.verdict h2{font-size:29px}
+.verdict strong{color:#079d91}
+.grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center;margin-top:40px}
+img{width:100%;height:340px;object-fit:cover;border-radius:15px}
+.opinion{background:white;padding:28px;border-radius:14px;margin-top:35px;box-shadow:0 8px 25px #0000000c}
+.message{background:#101d32;color:white;text-align:center;padding:45px 30px;border-radius:17px;margin-top:55px}
+.message h2{color:white}
+.message p{color:#cbd8e5}
+.sources{background:white;padding:30px;border-radius:14px;margin-top:55px}
+.sources a{color:#079d91;text-decoration:none}
+.sources a:hover{text-decoration:underline}
+.quiz{background:#e2f6f3;padding:25px;border-radius:13px;margin-top:35px}
+.quiz button{display:block;width:100%;text-align:left;padding:14px;margin:10px 0;border:1px solid #c6e6df;border-radius:8px;background:white;cursor:pointer;font-size:15px}
+.quiz button:hover{background:#c9f0e7}
+#resultat{font-weight:bold;margin-top:15px}
+footer{background:#091525;color:#bdcad8;text-align:center;padding:30px}
+.button{display:inline-block;background:#24c6b5;color:#102238;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin:8px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}nav a{margin-left:5px;font-size:13px}.verdict{padding:25px}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">SPORT & SANTÉ</div>
+<div>
+<a href="Index.html">01</a>
+<a href="Sport et santé Enquête.html">02</a>
+
+</div>
+</nav>
+<div class="hero">
+<small>03 — VERDICT</small>
+<h1>Alors, vrai ou faux ?</h1>
+<p>Après avoir étudié les avantages et les inconvénients du sport, il est temps de répondre à notre problématique.</p>
+</div>
+</header>
+
+<main>
+<div class="tag">NOTRE CONCLUSION</div>
+<h2>Le sport en excès est-il favorable à la santé ?</h2>
+
+<div class="verdict">
+<div class="tag">NOTRE RÉPONSE : FAUX</div>
+<h2>Le sport pratiqué en excès n'est pas favorable à la santé.</h2>
+<p>Le sport est bénéfique lorsqu'il est pratiqué de manière équilibrée. En revanche, lorsqu'il devient excessif, il peut provoquer des blessures, une fatigue persistante et des problèmes de récupération.</p>
+<p><strong>La bonne solution :</strong> pratiquer régulièrement, respecter ses limites et laisser son corps se reposer.</p>
+</div>
+
+<h2 style="margin-top:55px">💭 Mon opinion personnelle</h2>
+
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000" alt="Sportif après son entraînement">
+<div>
+<p>Personnellement, je pense que le sport est essentiel pour rester en bonne santé, mais qu'il ne faut pas confondre faire du sport et pousser son corps à ses limites.</p>
+
+<p>Selon moi, certaines personnes pensent qu'en faisant toujours plus de sport, elles obtiendront forcément de meilleurs résultats. Pourtant, le repos fait aussi partie de l'entraînement.</p>
+
+<p>Je préfère donc une pratique régulière et raisonnable, qui permet de progresser tout en préservant sa santé.</p>
+
+<p>Je pense qu'il faut apprendre à écouter son corps plutôt que de vouloir toujours dépasser ses limites.</p>
+</div>
+</div>
+
+<div class="message">
+<div class="tag">LE MESSAGE À RETENIR</div>
+<h2>Faire du sport intelligemment, c'est aussi savoir se reposer.</h2>
+<p>Le bon équilibre entre effort, alimentation, hydratation et repos est essentiel pour rester en bonne santé.</p>
+</div>
+
+<div class="quiz">
+<h2>🧠 Petit quiz final</h2>
+<p>Quelle est la meilleure façon de pratiquer du sport ?</p>
+<button onclick="repondre(false)">A. Faire du sport intensivement tous les jours sans repos.</button>
+<button onclick="repondre(true)">B. Adapter ses efforts et prévoir des temps de récupération.</button>
+<button onclick="repondre(false)">C. Ignorer les douleurs pour progresser plus vite.</button>
+<p id="resultat" aria-live="polite"></p>
+</div>
+
+<div class="sources">
+<h2>📚 Sources utilisées</h2>
+<p>Pour réaliser cette enquête, je me suis appuyé sur des sources fiables :</p>
+<ul>
+<li><a href="https://www.who.int/fr/news-room/fact-sheets/detail/physical-activity" target="_blank">Organisation mondiale de la Santé (OMS) – Activité physique</a></li>
+<li><a href="https://www.ameli.fr/assure/sante/themes/activite-physique-sante/l-activite-physique-selon-ses-aptitudes-et-en-securite" target="_blank">Assurance Maladie – Activité physique et sécurité</a></li>
+<li><a href="https://www.santepubliquefrance.fr/" target="_blank">Santé publique France</a></li>
+</ul>
+  <p>IA act: ChatGPT <p>
+<p><small>Les sources permettent de vérifier les informations présentées dans cette enquête..</small></p>
+</div>
+</main>
+
+<footer>
+<p>SPORT ET SANTÉ </p>
+<p>Merci d'avoir suivi notre enquête !</p>
+<a class="button" href="Index.html">↻ Recommencer l'enquête</a>
+</footer>
+
+<script>
+function repondre(correct) {
+const resultat=document.getElementById("resultat");
+if(correct){
+resultat.textContent="🎉 Bravo ! C'est la bonne réponse. Le repos est indispensable pour récupérer.";
+resultat.style.color="#078f80";
+}else{
+resultat.textContent="❌ Pas tout à fait ! Réessaie. Le corps a besoin de récupération.";
+resultat.style.color="#d46a38";
+}
+}
+</script>
+</body>
+</html>
