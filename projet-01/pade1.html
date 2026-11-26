@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Titre de la page</title>
+</head>
+<body>
+  
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partie 1 - Découvrir | Chewing-gum et mémoire</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#fff0f6,#eee5ff);
+  color: #493c55;
+}
+
+header {
+  text-align: center;
+  padding: 40px 15px;
+  background: linear-gradient(120deg,#f3b4d0,#bfa9ed);
+  color: white;
+}
+
+header h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 17px;
+}
+
+/* MENU DE NAVIGATION */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 18px 30px;
+  background: white;
+  box-shadow: 0 3px 12px #ddc9df;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-logo {
+  font-size: 19px;
+  font-weight: bold;
+  color: #a45c91;
+}
+
+.menu-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.menu-links a {
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  background: #f8eaf4;
+  color: #a45c91;
+  font-weight: bold;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.menu-links a:hover,
+.menu-links a.active {
+  background: #b67eaf;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: #b67eaf;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CONTENU */
+
+.page {
+  max-width: 1000px;
+  margin: 15px auto 40px;
+  padding: 20px;
+  animation: fade .5s;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(12px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.intro {
+  background: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px #dfcddd;
+}
+
+h2 {
+  color: #a65f99;
+  margin-bottom: 15px;
+  font-size: 27px;
+}
+
+h3 {
+  color: #a65f99;
+  margin-bottom: 12px;
+}
+
+.emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 20px;
+  margin: 22px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 23px;
+  box-shadow: 0 4px 15px #dfcddd;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card p {
+  line-height: 1.7;
+}
+
+.highlight {
+  background: #f8d9e9;
+  border-left: 5px solid #c27eae;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 22px 0;
+  line-height: 1.7;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 20px;
+  margin: 15px 0;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.next {
+  display: inline-block;
+  text-decoration: none;
+  margin: 25px auto;
+  background: #b77baa;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.next:hover {
+  background: #925d91;
+}
+
+.nav-bottom {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #977a9a;
+  font-size: 13px;
+}
+
+@media(max-width:700px) {
+  header h1 { font-size: 26px; }
+  .page { padding: 12px; }
+  .menu { padding: 15px; }
+  .menu-logo { font-size: 16px; }
+  .menu-toggle { display: block; }
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 15px;
+  }
+  .menu-links.open { display: flex; }
+  .menu-links a { width: 100%; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍬 CHEWING-GUM & MÉMOIRE 🧠</h1>
+  <p>Mâcher du chewing-gum aide-t-il à mieux mémoriser ?</p>
+</header>
+
+<nav class="menu">
+  <div class="menu-logo">🍬 Mémoire & Chewing-gum</div>
+  <button class="menu-toggle" onclick="document.getElementById('menuLinks').classList.toggle('open')">☰ Menu</button>
+  <div class="menu-links" id="menuLinks">
+    <a class="active" href="partie1.html">🧠 1. Découvrir</a>
+    <a href="partie2.html">⚖️ 2. Avantages et inconvénients</a>
+    <a href="partie3.html">🌸 3. Conclusion</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="intro">
+    <div class="emoji">🧠🍬</div>
+    <h2>1. Comprendre le fonctionnement</h2>
+    <p>Avant de répondre à notre problématique, découvrons comment fonctionne notre cerveau !</p>
+  </div>
+
+  <img class="photo" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1000" alt="Illustration du cerveau humain">
+
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">🧠</div>
+      <h3>Qu'est-ce que la mémoire ?</h3>
+      <p>La mémoire est une fonction du cerveau qui permet d'enregistrer, de conserver et de retrouver des informations. Elle est essentielle pour apprendre et se souvenir.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📚</div>
+      <h3>Les différents types de mémoire</h3>
+      <p><b>Mémoire à court terme :</b> garde temporairement quelques informations.</p>
+      <p><b>Mémoire à long terme :</b> conserve des informations pendant une longue durée, parfois toute la vie.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">⚡</div>
+      <h3>Comment mémorise-t-on ?</h3>
+      <p>Le cerveau reçoit des informations, les traite et peut les stocker. Les neurones communiquent entre eux grâce à des connexions appelées synapses.</p>
+    </div>
+  </div>
+
+  <h2>🍬 Que se passe-t-il quand on mâche du chewing-gum ?</h2>
+
+  <img class="photo" src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1000" alt="Bonbons et chewing-gums">
+
+  <div class="cards">
+    <div class="card">
+      <h3>1. La mastication</h3>
+      <p>Les muscles de la mâchoire se contractent et se relâchent pour écraser le chewing-gum.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Le cerveau est stimulé</h3>
+      <p>Les mouvements de la mâchoire envoient des informations sensorielles au cerveau.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. L'attention</h3>
+      <p>Cette activité pourrait modifier temporairement le niveau d'éveil et la vigilance chez certaines personnes.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h3>💡 Le savais-tu ?</h3>
+    Le cerveau utilise environ 20 % de l'énergie consommée par notre organisme, même lorsqu'on est au repos !
+  </div>
+
+  <div class="highlight">
+    <h3>❓ Pourquoi pourrait-il améliorer la mémoire ?</h3>
+    Si la mastication aide certaines personnes à rester attentives, elle pourrait indirectement faciliter l'apprentissage. Mais être plus attentif ne signifie pas forcément mieux mémoriser.
+  </div>
+
+  <div class="nav-bottom">
+    <a class="next" href="partie2.html">Découvrir les avantages et inconvénients →</a>
+  </div>
+
+</main>
+
+<footer>
+  Projet de SNT | Chewing-gum et mémoire 🍬 — Slide 1 / 3
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Titre de la page</title>
+</head>
+<body>
+  
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partie 3 - Conclusion | Chewing-gum et mémoire</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#fff0f6,#eee5ff);
+  color: #493c55;
+}
+
+header {
+  text-align: center;
+  padding: 40px 15px;
+  background: linear-gradient(120deg,#f3b4d0,#bfa9ed);
+  color: white;
+}
+
+header h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 17px;
+}
+
+/* MENU DE NAVIGATION */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 18px 30px;
+  background: white;
+  box-shadow: 0 3px 12px #ddc9df;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-logo {
+  font-size: 19px;
+  font-weight: bold;
+  color: #a45c91;
+}
+
+.menu-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.menu-links a {
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  background: #f8eaf4;
+  color: #a45c91;
+  font-weight: bold;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.menu-links a:hover,
+.menu-links a.active {
+  background: #b67eaf;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: #b67eaf;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CONTENU */
+
+.page {
+  max-width: 1000px;
+  margin: 15px auto 40px;
+  padding: 20px;
+  animation: fade .5s;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(12px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.intro {
+  background: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px #dfcddd;
+}
+
+h2 {
+  color: #a65f99;
+  margin-bottom: 15px;
+  font-size: 27px;
+}
+
+h3 {
+  color: #a65f99;
+  margin-bottom: 12px;
+}
+
+.emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 20px;
+  margin: 22px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 23px;
+  box-shadow: 0 4px 15px #dfcddd;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card p {
+  line-height: 1.7;
+}
+
+.highlight {
+  background: #f8d9e9;
+  border-left: 5px solid #c27eae;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 22px 0;
+  line-height: 1.7;
+}
+
+.conclusion {
+  text-align: center;
+  background: linear-gradient(120deg,#f5c5dc,#d9c8fa);
+  padding: 35px;
+  border-radius: 25px;
+  margin: 20px 0;
+  line-height: 1.8;
+}
+
+.next {
+  display: inline-block;
+  text-decoration: none;
+  margin: 25px 10px;
+  background: #b77baa;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.next:hover {
+  background: #925d91;
+}
+
+.nav-bottom {
+  text-align: center;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.9;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #977a9a;
+  font-size: 13px;
+}
+
+footer a {
+  color: #a45c91;
+}
+
+@media(max-width:700px) {
+  header h1 { font-size: 26px; }
+  .page { padding: 12px; }
+  .menu { padding: 15px; }
+  .menu-logo { font-size: 16px; }
+  .menu-toggle { display: block; }
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 15px;
+  }
+  .menu-links.open { display: flex; }
+  .menu-links a { width: 100%; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍬 CHEWING-GUM & MÉMOIRE 🧠</h1>
+  <p>Mâcher du chewing-gum aide-t-il à mieux mémoriser ?</p>
+</header>
+
+<nav class="menu">
+  <div class="menu-logo">🍬 Mémoire & Chewing-gum</div>
+  <button class="menu-toggle" onclick="document.getElementById('menuLinks').classList.toggle('open')">☰ Menu</button>
+  <div class="menu-links" id="menuLinks">
+    <a href="partie1.html">🧠 1. Découvrir</a>
+    <a href="partie2.html">⚖️ 2. Avantages et inconvénients</a>
+    <a class="active" href="partie3.html">🌸 3. Conclusion</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="intro">
+    <div class="emoji">🌸🧠</div>
+    <h2>3. Conclusion</h2>
+    <p>Alors, le chewing-gum aide-t-il vraiment à mieux mémoriser ?</p>
+  </div>
+
+  <div class="conclusion">
+    <div class="emoji">🤔🍬</div>
+    <h2>La réponse : pas forcément !</h2>
+    <p>Le chewing-gum pourrait favoriser l'attention et la vigilance chez certaines personnes. Cependant, les recherches ne prouvent pas qu'il améliore réellement la mémorisation.</p>
+  </div>
+
+  <h2>📊 Le bilan de notre recherche</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">✅</div>
+      <h3>Les points positifs</h3>
+      <ul>
+        <li>Peut favoriser la vigilance.</li>
+        <li>Peut aider certaines personnes à se détendre.</li>
+        <li>Stimule la production de salive.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="emoji">❌</div>
+      <h3>Les points négatifs</h3>
+      <ul>
+        <li>Peut fatiguer la mâchoire.</li>
+        <li>Le sucre peut favoriser les caries.</li>
+        <li>Certains produits peuvent provoquer des troubles digestifs.</li>
+        <li>L'effet sur la mémoire n'est pas démontré.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h3>📚 Comment mieux mémoriser ses leçons ?</h3>
+    <ul>
+      <li>Réviser régulièrement et ne pas tout apprendre au dernier moment.</li>
+      <li>Dormir suffisamment.</li>
+      <li>Faire des pauses pendant les révisions.</li>
+      <li>Se tester avec des questions et des exercices.</li>
+      <li>Éviter les distractions pour rester concentré.</li>
+    </ul>
+  </div>
+
+  <div class="conclusion">
+    <div class="emoji">💗</div>
+    <h2>Notre conclusion finale</h2>
+    <p>Le chewing-gum peut être agréable et avoir quelques effets positifs sur l'attention, mais ce n'est pas une solution magique pour apprendre. Pour mieux mémoriser, les bonnes habitudes de travail et le sommeil restent essentiels !</p>
+    <br>
+    <h3>Merci pour votre attention ! 🍬</h3>
+  </div>
+
+  <h2>🔎 Nos sources</h2>
+
+  <div class="card">
+    <p>Pour réaliser ce travail, nous nous sommes appuyés sur des recherches scientifiques :</p>
+    <br>
+    <ul>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/30611764/" target="_blank">Étude scientifique sur la mastication et l'attention (2019)</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/15183924/" target="_blank">Étude sur le chewing-gum et la mémoire (2004)</a></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10630119/" target="_blank">Revue scientifique sur les effets du chewing-gum (2023)</a></li>
+      <li><a href="https://www.nidcr.nih.gov/health-info/dry-mouth" target="_blank">Informations sur la salive et la santé bucco-dentaire</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-bottom">
+    <a class="next" href="partie2.html">← Retour à la partie 2</a>
+    <a class="next" href="partie1.html">↻ Revenir au début</a>
+  </div>
+
+</main>
+
+<footer>
+  Projet de SNT | Chewing-gum et mémoire 🍬 — Slide 3 / 3
+  <br>
+  Projet réalisé avec l'aide de l'intelligence artificielle : <b>ChatGPT</b> et <b>Gemini AI</b>.
+</footer>
+
+</body>
+</html>

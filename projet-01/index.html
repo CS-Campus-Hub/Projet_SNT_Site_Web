@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Titre de la page</title>
+</head>
+<body>
+  
+</body>
+</html
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chewing-gum et mémoire | Projet SNT</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#fff0f6,#eee5ff);
+  color: #493c55;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 45px 15px;
+  background: linear-gradient(120deg,#f3b4d0,#bfa9ed);
+  color: white;
+}
+
+header h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+/* MENU DE NAVIGATION */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 18px 30px;
+  background: white;
+  box-shadow: 0 3px 12px #ddc9df;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-logo {
+  font-size: 19px;
+  font-weight: bold;
+  color: #a45c91;
+}
+
+.menu-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.menu-links button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  background: #f8eaf4;
+  color: #a45c91;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.menu-links button:hover,
+.menu-links button.active {
+  background: #b67eaf;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: #b67eaf;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CONTENU DES PAGES */
+
+.page {
+  display: none;
+  max-width: 1000px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  animation: fade .5s;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fade {
+  from {opacity:0; transform:translateY(12px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.intro {
+  background: white;
+  text-align: center;
+  border-radius: 25px;
+  padding: 35px 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px #dfcddd;
+}
+
+.intro p {
+  max-width: 720px;
+  margin: 12px auto 0;
+  line-height: 1.7;
+}
+
+h2 {
+  color: #a65f99;
+  margin-bottom: 15px;
+  font-size: 27px;
+}
+
+h3 {
+  color: #a65f99;
+  margin-bottom: 10px;
+}
+
+.emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 15px #dfcddd;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.card-link {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: #a45c91;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.highlight {
+  background: #f8d9e9;
+  border-left: 5px solid #c27eae;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 22px 0;
+  line-height: 1.7;
+}
+
+.positive {
+  background: #e5f5e9;
+  border-left: 5px solid #65ae7a;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+.negative {
+  background: #ffe6e6;
+  border-left: 5px solid #df8989;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 20px;
+  margin: 15px 0;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.conclusion {
+  text-align: center;
+  background: linear-gradient(120deg,#f5c5dc,#d9c8fa);
+  padding: 35px;
+  border-radius: 25px;
+  margin: 20px 0;
+  line-height: 1.8;
+}
+
+.nav-bottom {
+  text-align: center;
+}
+
+.next {
+  display: inline-block;
+  margin: 20px 8px;
+  background: #b77baa;
+  color: white;
+  border: none;
+  padding: 15px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.next:hover {
+  background: #925d91;
+  transform: translateY(-2px);
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.9;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #977a9a;
+  font-size: 13px;
+}
+
+footer a {
+  color: #a45c91;
+}
+
+/* EFFET DE BONBONS AU CLIC */
+
+.candy-pop {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 24px;
+  user-select: none;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: candyBurst var(--dur, 900ms) cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes candyBurst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(0px, 0px) scale(0.5) rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--dx, 0px), var(--dy, -90px)) scale(1.25) rotate(var(--rot, 180deg));
+  }
+}
+
+/* MENU SUR TELEPHONE */
+
+@media(max-width:700px) {
+  header h1 { font-size: 26px; }
+  .page { padding: 12px; }
+  .menu { padding: 15px; }
+  .menu-logo { font-size: 16px; }
+  .menu-toggle { display: block; }
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 15px;
+  }
+  .menu-links.open { display: flex; }
+  .menu-links button { width: 100%; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍬 CHEWING-GUM & MÉMOIRE 🧠</h1>
+  <p>Présentation de projet SNT — Clique n'importe où pour faire apparaître des bonbons !</p>
+</header>
+
+<nav class="menu">
+  <div class="menu-logo">🍬 Mémoire & Chewing-gum</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+  <div class="menu-links" id="menuLinks">
+    <button class="active" onclick="showPage(0); closeMenu()">🏠 Accueil</button>
+    <button onclick="showPage(1); closeMenu()">🧠 1. Découvrir</button>
+    <button onclick="showPage(2); closeMenu()">⚖️ 2. Avantages & Limites</button>
+    <button onclick="showPage(3); closeMenu()">🌸 3. Conclusion</button>
+  </div>
+</nav>
+
+<!-- PAGE 0 : ACCUEIL -->
+
+<main class="page active">
+
+  <div class="intro">
+    <div class="emoji">🍬🧠❓</div>
+    <h2>Mâcher du chewing-gum aide-t-il à mieux mémoriser ?</h2>
+    <p>Beaucoup d'élèves mâchent du chewing-gum en révisant ou en travaillant pour rester concentrés. Mais est-ce vraiment efficace pour la mémoire, ou s'agit-il d'une fausse bonne idée ?</p>
+  </div>
+
+  <div class="highlight">
+    <h3>🎯 Notre problématique</h3>
+    Comprendre comment la mastication agit sur le cerveau, comparer les effets positifs et négatifs du chewing-gum, et vérifier ce que disent réellement les recherches scientifiques.
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <div class="emoji">🧠</div>
+        <h3>Partie 1 : Découvrir</h3>
+        <p>Le fonctionnement de la mémoire et ce qui se passe dans le cerveau quand on mâche.</p>
+      </div>
+      <button class="card-link" onclick="showPage(1)">Voir la partie 1 →</button>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">⚖️</div>
+        <h3>Partie 2 : Avantages & Limites</h3>
+        <p>Les bienfaits possibles, les inconvénients et l'avis des études scientifiques.</p>
+      </div>
+      <button class="card-link" onclick="showPage(2)">Voir la partie 2 →</button>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">🌸</div>
+        <h3>Partie 3 : Conclusion</h3>
+        <p>La réponse à la problématique, des conseils de révision et nos sources.</p>
+      </div>
+      <button class="card-link" onclick="showPage(3)">Voir la partie 3 →</button>
+    </div>
+  </div>
+
+  <div class="nav-bottom">
+    <button class="next" onclick="showPage(1)">Commencer la présentation →</button>
+  </div>
+
+</main>
+
+<!-- PAGE 1 : DÉCOUVRIR -->
+
+<section class="page">
+
+  <div class="intro">
+    <div class="emoji">🧠🍬</div>
+    <h2>1. Comprendre le fonctionnement</h2>
+    <p>Avant de répondre à notre problématique, découvrons comment fonctionne notre cerveau !</p>
+  </div>
+
+  <img class="photo"
+  src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1000"
+  alt="Illustration du cerveau humain">
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <div class="emoji">🧠</div>
+        <h3>Qu'est-ce que la mémoire ?</h3>
+        <p>La mémoire est une fonction du cerveau qui permet d'enregistrer, de conserver et de retrouver des informations. Elle est essentielle pour apprendre et se souvenir.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">📚</div>
+        <h3>Les différents types de mémoire</h3>
+        <p><b>Mémoire à court terme :</b> garde temporairement quelques informations.</p>
+        <p><b>Mémoire à long terme :</b> conserve des informations pendant une longue durée, parfois toute la vie.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">⚡</div>
+        <h3>Comment mémorise-t-on ?</h3>
+        <p>Le cerveau reçoit des informations, les traite et peut les stocker. Les neurones communiquent entre eux grâce à des connexions appelées synapses.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>🍬 Que se passe-t-il quand on mâche du chewing-gum ?</h2>
+
+  <img class="photo"
+  src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1000"
+  alt="Bonbons et chewing-gums">
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <h3>1. La mastication</h3>
+        <p>Les muscles de la mâchoire se contractent et se relâchent pour écraser le chewing-gum.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>2. Le cerveau est stimulé</h3>
+        <p>Les mouvements de la mâchoire envoient des informations sensorielles au cerveau.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>3. L'attention</h3>
+        <p>Cette activité pourrait modifier temporairement le niveau d'éveil et la vigilance chez certaines personnes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h3>💡 Le savais-tu ?</h3>
+    Le cerveau utilise environ 20 % de l'énergie consommée par notre organisme, même lorsqu'on est au repos !
+  </div>
+
+  <div class="highlight">
+    <h3>❓ Pourquoi pourrait-il améliorer la mémoire ?</h3>
+    Si la mastication aide certaines personnes à rester attentives, elle pourrait indirectement faciliter l'apprentissage. Mais être plus attentif ne signifie pas forcément mieux mémoriser.
+  </div>
+
+  <div class="nav-bottom">
+    <button class="next" onclick="showPage(0)">← Accueil</button>
+    <button class="next" onclick="showPage(2)">Avantages et inconvénients →</button>
+  </div>
+
+</section>
+
+<!-- PAGE 2 : AVANTAGES ET LIMITES -->
+
+<section class="page">
+
+  <div class="intro">
+    <div class="emoji">⚖️🔬</div>
+    <h2>2. Les avantages et les inconvénients</h2>
+    <p>Le chewing-gum peut avoir certains effets intéressants, mais aussi quelques limites.</p>
+  </div>
+
+  <img class="photo"
+  src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1000"
+  alt="Chewing-gums colorés">
+
+  <h2>✅ Les avantages possibles</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <div class="emoji">👀</div>
+        <h3>1. Une meilleure vigilance</h3>
+        <p>Mâcher peut aider certaines personnes à rester éveillées et attentives pendant une tâche.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">😌</div>
+        <h3>2. Une sensation de détente</h3>
+        <p>Pour certaines personnes, mâcher du chewing-gum peut aider à se détendre ou à diminuer une sensation de stress.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">🎯</div>
+        <h3>3. Une concentration possible</h3>
+        <p>La mastication pourrait améliorer légèrement l'attention dans certaines situations. Les résultats varient selon les personnes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">🦷</div>
+        <h3>4. Un intérêt pour les dents</h3>
+        <p>Le chewing-gum sans sucre stimule la production de salive. Il peut aider à neutraliser les acides après un repas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="positive">
+    <b>À retenir :</b> certains effets positifs concernent surtout l'attention, la vigilance et la salivation. Ils ne prouvent pas une amélioration de la mémoire.
+  </div>
+
+  <h2>❌ Les inconvénients</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <div class="emoji">🤕</div>
+        <h3>1. Fatigue de la mâchoire</h3>
+        <p>Mâcher trop longtemps peut fatiguer les muscles de la mâchoire et provoquer une gêne.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">🍬</div>
+        <h3>2. Le sucre</h3>
+        <p>Les chewing-gums sucrés consommés fréquemment peuvent favoriser les caries dentaires.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">💨</div>
+        <h3>3. Les troubles digestifs</h3>
+        <p>Une mastication fréquente peut favoriser l'ingestion d'air. Certains édulcorants, comme le sorbitol, peuvent provoquer des ballonnements ou des diarrhées en grande quantité.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">📉</div>
+        <h3>4. Pas de garantie pour la mémoire</h3>
+        <p>Le chewing-gum ne permet pas forcément de retenir davantage d'informations. Il ne remplace pas les révisions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="negative">
+    <b>Attention :</b> mâcher du chewing-gum en permanence n'est pas nécessairement bénéfique. Il faut éviter les excès.
+  </div>
+
+  <h2>🔬 Que disent les études scientifiques ?</h2>
+
+  <div class="card">
+    <div>
+      <h3>Les recherches ne sont pas toutes d'accord.</h3>
+      <p>• Certaines études observent une amélioration de l'attention ou de la vigilance.</p>
+      <p>• D'autres ne trouvent pas d'amélioration significative de la mémoire.</p>
+      <p>• Les résultats dépendent des conditions de l'expérience et des personnes étudiées.</p>
+      <br>
+      <p><b>Notre interprétation :</b> il n'existe pas de preuve scientifique suffisamment solide pour affirmer que mâcher du chewing-gum améliore la mémorisation.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h3>🧪 Une petite expérience possible</h3>
+    Pour tester cette idée, on pourrait proposer à deux groupes d'élèves de mémoriser une même liste de mots. Un groupe mâcherait du chewing-gum et l'autre non. Ensuite, on comparerait le nombre de mots retenus dans les mêmes conditions.
+    <p><b>Important :</b> il faudrait répéter l'expérience et contrôler les autres facteurs pour obtenir des résultats fiables.</p>
+  </div>
+
+  <div class="nav-bottom">
+    <button class="next" onclick="showPage(1)">← Partie 1</button>
+    <button class="next" onclick="showPage(3)">Passer à la conclusion →</button>
+  </div>
+
+</section>
+
+<!-- PAGE 3 : CONCLUSION -->
+
+<section class="page">
+
+  <div class="intro">
+    <div class="emoji">🌸🧠</div>
+    <h2>3. Conclusion</h2>
+    <p>Alors, le chewing-gum aide-t-il vraiment à mieux mémoriser ?</p>
+  </div>
+
+  <div class="conclusion">
+    <div class="emoji">🤔🍬</div>
+    <h2>La réponse : pas forcément !</h2>
+    <p>Le chewing-gum pourrait favoriser l'attention et la vigilance chez certaines personnes. Cependant, les recherches ne prouvent pas qu'il améliore réellement la mémorisation.</p>
+  </div>
+
+  <h2>📊 Le bilan de notre recherche</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <div class="emoji">✅</div>
+        <h3>Les points positifs</h3>
+        <ul>
+          <li>Peut favoriser la vigilance.</li>
+          <li>Peut aider certaines personnes à se détendre.</li>
+          <li>Stimule la production de salive.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="emoji">❌</div>
+        <h3>Les points négatifs</h3>
+        <ul>
+          <li>Peut fatiguer la mâchoire.</li>
+          <li>Le sucre peut favoriser les caries.</li>
+          <li>Certains produits peuvent provoquer des troubles digestifs.</li>
+          <li>L'effet sur la mémoire n'est pas démontré.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <h3>📚 Comment mieux mémoriser ses leçons ?</h3>
+    <ul>
+      <li>Réviser régulièrement et ne pas tout apprendre au dernier moment.</li>
+      <li>Dormir suffisamment.</li>
+      <li>Faire des pauses pendant les révisions.</li>
+      <li>Se tester avec des questions et des exercices.</li>
+      <li>Éviter les distractions pour rester concentré.</li>
+    </ul>
+  </div>
+
+  <div class="conclusion">
+    <div class="emoji">💗</div>
+    <h2>Notre conclusion finale</h2>
+    <p>Le chewing-gum peut être agréable et avoir quelques effets positifs sur l'attention, mais ce n'est pas une solution magique pour apprendre. Pour mieux mémoriser, les bonnes habitudes de travail et le sommeil restent essentiels !</p>
+    <br>
+    <h3>Merci pour votre attention ! 🍬</h3>
+  </div>
+
+  <h2>🔎 Nos sources</h2>
+
+  <div class="card">
+    <div>
+      <p>Pour réaliser ce travail, nous nous sommes appuyés sur des recherches scientifiques ainsi que sur l'aide d'assistants d'intelligence artificielle :</p>
+      <br>
+      <ul>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/30611764/" target="_blank">Étude scientifique sur la mastication et l'attention (2019)</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/15183924/" target="_blank">Étude sur le chewing-gum et la mémoire (2004)</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10630119/" target="_blank">Revue scientifique sur les effets du chewing-gum (2023)</a></li>
+        <li><a href="https://www.nidcr.nih.gov/health-info/dry-mouth" target="_blank">Informations sur la salive et la santé bucco-dentaire</a></li>
+        <li><a href="https://gemini.google.com/" target="_blank">Gemini AI (Google) — Aide à la structuration, au développement web et aux effets interactifs</a></li>
+        <li><a href="https://chatgpt.com/" target="_blank">ChatGPT (OpenAI) — Aide à la recherche d'idées et à la rédaction</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="nav-bottom">
+    <button class="next" onclick="showPage(0)">↻ Revenir à l'accueil</button>
+  </div>
+
+</section>
+
+<footer>
+  Projet de SNT | Chewing-gum et mémoire 🍬
+  <br>
+  Un projet réalisé avec l'aide de l'intelligence artificielle (Gemini AI & ChatGPT).
+</footer>
+
+<script>
+// CHANGER DE PAGE
+function showPage(numero) {
+  const pages = document.querySelectorAll(".page");
+  const boutons = document.querySelectorAll(".menu-links button");
+
+  pages.forEach(p => p.classList.remove("active"));
+  boutons.forEach(b => b.classList.remove("active"));
+
+  pages[numero].classList.add("active");
+  boutons[numero].classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+// OUVRIR ET FERMER LE MENU MOBILE
+function toggleMenu() {
+  document.getElementById("menuLinks").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("menuLinks").classList.remove("open");
+}
+
+// EFFET BONBONS AU CLIC
+const candies = ["🍬", "🍭", "🍡", "🍫", "✨"];
+
+document.addEventListener("click", (e) => {
+  const count = 6;
+
+  for (let i = 0; i < count; i++) {
+    const candy = document.createElement("span");
+    candy.className = "candy-pop";
+    candy.textContent = candies[Math.floor(Math.random() * candies.length)];
+
+    const angle = (Math.PI * 2 * i) / count + (Math.random() * 0.5 - 0.25);
+    const distance = 55 + Math.random() * 65;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance - 25;
+    const rot = (Math.random() > 0.5 ? 1 : -1) * (120 + Math.random() * 180);
+    const dur = 750 + Math.random() * 350;
+
+    candy.style.left = `${e.clientX}px`;
+    candy.style.top = `${e.clientY}px`;
+    candy.style.setProperty("--dx", `${dx}px`);
+    candy.style.setProperty("--dy", `${dy}px`);
+    candy.style.setProperty("--rot", `${rot}deg`);
+    candy.style.setProperty("--dur", `${dur}ms`);
+
+    document.body.appendChild(candy);
+
+    setTimeout(() => {
+      candy.remove();
+    }, dur);
+  }
+});
+</script>
+
+</body>
+</html>
