@@ -1,0 +1,125 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f5fa;
+    color: #26334a;
+    line-height: 1.6;
+}
+
+/* Bandeau principal */
+header {
+    background: #283d78;
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 14px;
+    display: block;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 22px 0 5px;
+}
+
+header p {
+    margin: 0;
+    color: #e2e8ff;
+}
+
+/* Contenu principal */
+main {
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.intro {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px #0000000c;
+}
+
+/* Titres */
+h2 {
+    color: #283d78;
+    margin-top: 35px;
+}
+
+/* Thématiques */
+.themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin: 20px 0 35px;
+}
+
+.theme {
+    background: #e9edfa;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #e7ad39;
+}
+
+/* Galerie des projets */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    display: block;
+    background: white;
+    padding: 23px;
+    border-radius: 13px;
+    text-decoration: none;
+    color: #26334a;
+    border: 1px solid #e4e7ef;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px #283d7820;
+    border-color: #e7ad39;
+}
+
+.card h3 {
+    color: #283d78;
+    margin: 0 0 8px;
+}
+
+.card span {
+    color: #267c81;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Pied de page */
+footer {
+    background: #283d78;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Adaptation aux téléphones */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
