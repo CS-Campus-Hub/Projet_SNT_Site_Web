@@ -1,7 +1,105 @@
-<h1>Galerie des projets SNT</h1>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNT – Santé et numérique | LABB</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #263238;
+    background: #f5f7fa;
+}
+h1 { color: #176b70; }
+h2 { color: #176b70; margin-top: 30px; }
+.intro {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #263238;
+    border: 1px solid #ddd;
+}
+.card:hover {
+    border-color: #176b70;
+    transform: translateY(-2px);
+}
+footer {
+    margin-top: 40px;
+    font-size: 0.85em;
+    color: #68757b;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Santé et numérique : les secondes enquêtent !</h1>
+
+<div class="intro">
+<p>
+Dans le cadre de la <strong>Semaine des lycées français du monde</strong>,
+les élèves de seconde du Lycée Français Alioune Blondin Beye de Luanda
+ont réalisé des mini-sites web en SNT autour de la santé.
+</p>
+
+<p>Deux thématiques au choix :</p>
 <ul>
-  <li><a href="projet-01/">Projet 1</a></li>
-  <li><a href="projet-02/">Projet 2</a></li>
-  <li><a href="projet-03/">Projet 3</a></li>
+<li><strong>Info ou intox ?</strong> Enquêter sur les idées reçues en santé.</li>
+<li><strong>Les métiers de la santé :</strong> découvrir les professions et leurs parcours de formation.</li>
 </ul>
+
+<p>
+En mobilisant HTML, CSS et JavaScript, les élèves ont associé
+créativité, esprit critique et maîtrise du numérique.
+Ils ont également appris à vérifier leurs informations,
+citer leurs sources et respecter le droit d'auteur.
+</p>
+</div>
+
+<h2>Découvrez les réalisations des élèves</h2>
+
+<div class="projects">
+
+<!-- Dupliquer cette carte pour chaque élève -->
+<a class="card" href="projet-01/">
+    <strong>Projet 1</strong>
+    <p>Découvrir le site →</p>
+</a>
+
+<a class="card" href="projet-02/">
+    <strong>Projet 2</strong>
+    <p>Découvrir le site →</p>
+</a>
+
+<a class="card" href="projet-03/">
+    <strong>Projet 3</strong>
+    <p>Découvrir le site →</p>
+</a>
+
+</div>
+
+<footer>
+Lycée Français Alioune Blondin Beye – Luanda<br>
+Sciences numériques et technologie – Seconde
+</footer>
+
+</body>
+</html>
