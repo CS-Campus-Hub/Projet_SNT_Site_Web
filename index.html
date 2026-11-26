@@ -4,101 +4,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SNT – Santé et numérique | LABB</title>
+<title>Santé & Numérique | LABB Luanda</title>
+
 <style>
+* { box-sizing: border-box; }
+
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    background: #f4f5fa;
+    color: #26334a;
     line-height: 1.6;
-    color: #263238;
-    background: #f5f7fa;
 }
-h1 { color: #176b70; }
-h2 { color: #176b70; margin-top: 30px; }
+
+header {
+    background: #283d78;
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 14px;
+    display: block;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 22px 0 5px;
+}
+
+header p {
+    margin: 0;
+    color: #e2e8ff;
+}
+
+main {
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
 .intro {
     background: white;
-    padding: 25px;
-    border-radius: 12px;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px #0000000c;
 }
+
+h2 {
+    color: #283d78;
+    margin-top: 35px;
+}
+
+.themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin: 20px 0 35px;
+}
+
+.theme {
+    background: #e9edfa;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #e7ad39;
+}
+
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
 }
+
 .card {
+    display: block;
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 23px;
+    border-radius: 13px;
     text-decoration: none;
-    color: #263238;
-    border: 1px solid #ddd;
+    color: #26334a;
+    border: 1px solid #e4e7ef;
+    transition: 0.2s;
 }
+
 .card:hover {
-    border-color: #176b70;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px #283d7820;
+    border-color: #e7ad39;
 }
+
+.card h3 {
+    color: #283d78;
+    margin: 0 0 8px;
+}
+
+.card span {
+    color: #267c81;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
 footer {
-    margin-top: 40px;
-    font-size: 0.85em;
-    color: #68757b;
+    background: #283d78;
+    color: white;
     text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+@media(max-width:600px) {
+    header h1 { font-size: 1.5rem; }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Santé et numérique : les secondes enquêtent !</h1>
+<header>
+    <img src="images/slfm-2026.jpg"
+         alt="Affiche officielle de la Semaine des lycées français du monde 2026">
 
-<div class="intro">
-<p>
-Dans le cadre de la <strong>Semaine des lycées français du monde</strong>,
-les élèves de seconde du Lycée Français Alioune Blondin Beye de Luanda
-ont réalisé des mini-sites web en SNT autour de la santé.
-</p>
+    <h1>Santé & Numérique</h1>
+    <p>Les élèves de seconde enquêtent, créent et partagent</p>
+</header>
 
-<p>Deux thématiques au choix :</p>
-<ul>
-<li><strong>Info ou intox ?</strong> Enquêter sur les idées reçues en santé.</li>
-<li><strong>Les métiers de la santé :</strong> découvrir les professions et leurs parcours de formation.</li>
-</ul>
+<main>
 
-<p>
-En mobilisant HTML, CSS et JavaScript, les élèves ont associé
-créativité, esprit critique et maîtrise du numérique.
-Ils ont également appris à vérifier leurs informations,
-citer leurs sources et respecter le droit d'auteur.
-</p>
-</div>
+<section class="intro">
+    <p>
+    À l'occasion de la <strong>10e Semaine des lycées français du monde</strong>,
+    les élèves de seconde du Lycée Français Alioune Blondin Beye
+    de Luanda ont réalisé des mini-sites web en SNT autour de la santé.
+    </p>
+
+    <p>
+    En mobilisant <strong>HTML, CSS et JavaScript</strong>, ils ont
+    développé leur créativité, leur esprit critique et leurs compétences
+    numériques, tout en apprenant à vérifier leurs informations
+    et à respecter le droit d'auteur.
+    </p>
+</section>
+
+<h2>Deux thématiques explorées</h2>
+
+<section class="themes">
+    <div class="theme">
+        <strong>🔎 Info ou intox ?</strong>
+        <p>Enquêter sur les idées reçues et démêler le vrai du faux en santé.</p>
+    </div>
+
+    <div class="theme">
+        <strong>🩺 Les métiers de la santé</strong>
+        <p>Découvrir les professions, leurs missions et leurs parcours de formation.</p>
+    </div>
+</section>
 
 <h2>Découvrez les réalisations des élèves</h2>
+<p>Explorez les différents sites réalisés individuellement par les élèves.</p>
 
-<div class="projects">
+<section class="projects">
 
-<!-- Dupliquer cette carte pour chaque élève -->
-<a class="card" href="projet-01/">
-    <strong>Projet 1</strong>
-    <p>Découvrir le site →</p>
-</a>
+    <a class="card" href="projet-01/">
+        <h3>Projet 01</h3>
+        <span>Découvrir le site →</span>
+    </a>
 
-<a class="card" href="projet-02/">
-    <strong>Projet 2</strong>
-    <p>Découvrir le site →</p>
-</a>
+    <a class="card" href="projet-02/">
+        <h3>Projet 02</h3>
+        <span>Découvrir le site →</span>
+    </a>
 
-<a class="card" href="projet-03/">
-    <strong>Projet 3</strong>
-    <p>Découvrir le site →</p>
-</a>
+    <a class="card" href="projet-03/">
+        <h3>Projet 03</h3>
+        <span>Découvrir le site →</span>
+    </a>
 
-</div>
+</section>
+</main>
 
 <footer>
-Lycée Français Alioune Blondin Beye – Luanda<br>
-Sciences numériques et technologie – Seconde
+    Lycée Français Alioune Blondin Beye – Luanda<br>
+    Sciences numériques et technologie – Seconde | SLFM 2026
 </footer>
 
 </body>
