@@ -15,21 +15,26 @@ body {
 header {
     background: #283d78;
     color: white;
-    padding: 35px 20px;
-    text-align: center;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
 }
 
 header img {
-    width: 100%;
-    max-width: 850px;
-    border-radius: 14px;
+    width: 100px;
+    height: 65px;
+    object-fit: contain;
+    border-radius: 8px;
     display: block;
-    margin: auto;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 header h1 {
-    font-size: 2rem;
-    margin: 22px 0 5px;
+    font-size: 1.6rem;
+    margin: 0 0 4px;
 }
 
 header p {
@@ -119,33 +124,21 @@ footer {
 
 /* Adaptation aux téléphones */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
+    header {
+        gap: 12px;
+        padding: 12px;
     }
-}
 
+    header img {
+        width: 75px;
+        height: 55px;
+    }
 
-.header-banner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 20px;
-    text-align: left;
-}
+    header h1 {
+        font-size: 1.3rem;
+    }
 
-.header-banner img {
-    width: 220px;
-    max-height: 130px;
-    object-fit: contain;
-    border-radius: 12px;
-    flex-shrink: 0;
-}
-
-.header-text h1 {
-    margin: 0 0 10px 0;
-}
-
-.header-text p {
-    margin: 0;
+    header p {
+        font-size: 0.85rem;
+    }
 }
