@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Info ou Intox : Bilan et quiz</title>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <div class="masthead">
+    <p class="masthead-kicker">Dossier santé · Projet SNT</p>
+    <p class="masthead-meta">Lycée français Alioune Blondin Beye · 2nde A · Novembre 2026</p>
+  </div>
+
+  <nav class="nav-sticky" aria-label="Pages du dossier">
+      <a href="index.html">1. L'idée reçue</a>
+      <a href="etudes.html">2. Ce que dit la science</a>
+      <a href="bilan.html" class="active">3. Bilan &amp; Quiz</a>
+  </nav>
+
+  <main id="contenu">
+    <section class="section">
+      <p class="eyebrow">Le verdict · Page 3/3</p>
+      <h2>La balance des preuves</h2>
+      <p>Voici, face à face, l'idée reçue et les éléments recueillis dans l'enquête. Cliquez ensuite pour révéler le verdict officiel du dossier.</p>
+
+      <div class="balance">
+        <article class="pan pan-mythe">
+          <h3>L'idée reçue</h3>
+          <p>Les jeux vidéo violents rendraient les jeunes violents dans la vraie vie.</p>
+        </article>
+        <p class="versus" aria-hidden="true">contre</p>
+        <article class="pan pan-preuves">
+          <h3>Les preuves</h3>
+          <ul>
+            <li>APA 2020 : attribuer des violences graves aux jeux n'est pas fondé.</li>
+            <li>Oxford 2019 : aucun lien chez 1&nbsp;004 adolescents.</li>
+            <li>OMS : le trouble du jeu concerne l'usage excessif, pas la violence.</li>
+            <li>Inserm / MILDECA : trop jouer peut quand même nuire à la santé.</li>
+          </ul>
+        </article>
+      </div>
+
+      <button type="button" class="cta" id="btn-verdict">Révéler le verdict</button>
+      <div id="verdict-box" class="verdict-box" hidden></div>
+    </section>
+
+    <section id="quiz" class="section">
+      <p class="eyebrow">Testez-vous</p>
+      <h2>Quiz de l'enquêteur</h2>
+      <p>Quatre questions pour vérifier ce que vous avez retenu. Une seule bonne réponse à chaque fois, avec une explication immédiate.</p>
+
+      <div class="quiz-app" id="quiz-app">
+        <div class="progress" aria-hidden="true">
+          <div class="progress-bar" id="quiz-progress"></div>
+        </div>
+        <p class="quiz-step" id="quiz-step">Question 1 sur 4</p>
+        <div id="quiz-panel"></div>
+        <div id="quiz-final" class="quiz-final" hidden></div>
+      </div>
+    </section>
+
+    <section id="conseils" class="section">
+      <p class="eyebrow">Prévenir et accompagner</p>
+      <h2>Auto-check : mes habitudes de jeu</h2>
+      <p>Déplacez les trois curseurs selon vos habitudes. Un conseil personnalisé s'affiche en dessous. Ce n'est pas un diagnostic, juste une aide pour jouer plus sereinement.</p>
+
+      <div class="habits" id="habits">
+        <label>
+          <span>Le soir, j'arrête de jouer…</span>
+          <input type="range" id="habit-sommeil" min="0" max="2" step="1" value="1">
+          <span class="habit-scale"><span>pendant que je m'endors</span><span>un peu avant</span><span>bien avant de dormir</span></span>
+        </label>
+        <label>
+          <span>Pendant une session, je fais des pauses…</span>
+          <input type="range" id="habit-pauses" min="0" max="2" step="1" value="1">
+          <span class="habit-scale"><span>jamais</span><span>parfois</span><span>régulièrement</span></span>
+        </label>
+        <label>
+          <span>Je regarde l'âge conseillé (PEGI)…</span>
+          <input type="range" id="habit-pegi" min="0" max="2" step="1" value="1">
+          <span class="habit-scale"><span>jamais</span><span>de temps en temps</span><span>presque toujours</span></span>
+        </label>
+        <div id="habit-conseil" class="habit-conseil"></div>
+      </div>
+
+      <div class="pratiques">
+        <h3>Les bons réflexes à retenir</h3>
+        <ul>
+          <li><strong>Limiter son temps de jeu :</strong> faire des pauses et garder du temps pour le sport, les amis et les devoirs.</li>
+          <li><strong>Protéger son sommeil :</strong> éviter de jouer juste avant de dormir, car les écrans et l'excitation d'une partie peuvent retarder l'endormissement.</li>
+          <li><strong>Respecter le PEGI :</strong> choisir un jeu adapté à son âge. Le pictogramme indique aussi le type de contenu (violence, langage, etc.). Consultez le <a href="https://pegi.info/fr" target="_blank" rel="noopener">site officiel PEGI</a>.</li>
+          <li><strong>Garder un esprit critique :</strong> se méfier des explications trop simples après un fait divers, et toujours vérifier les sources.</li>
+          <li><strong>Demander de l'aide si besoin :</strong> si vous avez l'impression de ne plus pouvoir vous arrêter de jouer, parlez-en à l'infirmière du lycée ou à un adulte de confiance. Vous pouvez aussi consulter <a href="https://www.sante.fr/" target="_blank" rel="noopener">Santé.fr</a>.</li>
+        </ul>
+      </div>
+
+      <div class="page-nav">
+        <a class="cta cta-secondary ghost" href="etudes.html">⬅️ Retour : ce que dit la science</a>
+        <a class="cta cta-secondary" href="index.html">Revenir au début</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projet réalisé par <strong>Luaty Mendes</strong>, 2nde A — Lycée français Alioune Blondin Beye</p>
+    <p>Semaine des lycées français du monde – Novembre 2026 · Thématique 1 : Info ou intox (Page 3/3 — Bilan et quiz)</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
