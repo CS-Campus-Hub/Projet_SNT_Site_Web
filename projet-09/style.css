@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background-size: 300% 300%;
+    animation: mouvementFond 14s ease infinite;
+    line-height: 1.75;
+}
+
+@keyframes mouvementFond {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes flottementDoux {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+}
+
+@keyframes popScore {
+    0% { transform: scale(0.92); opacity: 0.4; }
+    60% { transform: scale(1.03); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+header {
+    text-align: center;
+    padding: 68px 24px;
+    color: #FFFFFF;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px 0;
+}
+
+.emoji-flottant {
+    display: inline-block;
+    animation: flottementDoux 3.2s ease-in-out infinite;
+}
+
+header p {
+    font-size: 19px;
+    margin: 0;
+    opacity: 0.94;
+}
+
+nav {
+    text-align: center;
+    padding: 14px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+}
+
+nav a {
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 4px 10px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+}
+
+main {
+    width: 88%;
+    max-width: 1040px;
+    margin: 42px auto;
+}
+
+section {
+    background-color: #FFFFFF;
+    padding: 34px;
+    margin-bottom: 28px;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-top: 0;
+    padding-bottom: 12px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 660px;
+    height: auto;
+    margin: 26px auto;
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+}
+
+.cartes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.carte {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 220px;
+    padding: 24px;
+    border-radius: 18px;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease;
+}
+
+.carte:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+.carte::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        260px circle at var(--x, 50%) var(--y, 50%),
+        rgba(255, 255, 255, 0.55),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.carte:hover::before {
+    opacity: 1;
+}
+
+.important {
+    padding: 20px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.important.anim-score {
+    animation: popScore 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.question {
+    padding: 18px 20px;
+    border-radius: 16px;
+    margin-bottom: 18px;
+    transition: transform 0.2s ease;
+}
+
+.question:hover {
+    transform: translateX(4px);
+}
+
+.question label {
+    display: inline-block;
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.bouton {
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    margin: 8px 6px 0 0;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bouton:hover {
+    transform: translateY(-3px);
+}
+
+button {
+    color: #FFFFFF;
+    border: none;
+    padding: 13px 26px;
+    margin-top: 8px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.btn-haut {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 150;
+}
+
+.btn-haut.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+footer {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 48px;
+    font-size: 15px;
+}
+
+.barre-progression {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    z-index: 200;
+    transition: width 0.1s linear;
+}
+
+.revele {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revele.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    header { padding: 46px 18px; }
+    header h1 { font-size: 28px; }
+    nav a { margin: 4px; padding: 7px 13px; font-size: 14px; }
+    main { width: 94%; margin: 24px auto; }
+    section { padding: 20px; border-radius: 18px; }
+}
+
+/* =========================================
+   PAGE 1 : ACCUEIL — VERT SAPIN & ÉMERAUDE
+   ========================================= */
+.page-accueil {
+    background: linear-gradient(-45deg, #ECFDF5, #D1FAE5, #F0FDF4, #A7F3D0);
+    background-size: 300% 300%;
+    color: #064E3B;
+}
+
+.page-accueil header {
+    background: linear-gradient(135deg, #064E3B, #059669);
+    box-shadow: 0 8px 24px rgba(6, 78, 59, 0.25);
+}
+
+.page-accueil nav,
+.page-accueil footer {
+    background-color: #022C22;
+}
+
+.page-accueil h2,
+.page-accueil h3,
+.page-accueil a {
+    color: #047857;
+}
+
+.page-accueil nav a,
+.page-accueil .bouton,
+.page-accueil button,
+.page-accueil .btn-haut,
+.page-accueil footer {
+    color: #FFFFFF;
+}
+
+.page-accueil h2 {
+    border-bottom: 3px solid #A7F3D0;
+}
+
+.page-accueil .carte,
+.page-accueil .important {
+    background-color: #D1FAE5;
+    border: 1.5px solid #34D399;
+    color: #064E3B;
+}
+
+.page-accueil .important {
+    border-left: 6px solid #059669;
+}
+
+.page-accueil .question {
+    background-color: #ECFDF5;
+    border: 1px solid #6EE7B7;
+}
+
+.page-accueil .bouton,
+.page-accueil button,
+.page-accueil .btn-haut {
+    background: linear-gradient(135deg, #059669, #10B981);
+    box-shadow: 0 8px 18px rgba(5, 150, 105, 0.3);
+}
+
+.page-accueil .barre-progression {
+    background: linear-gradient(90deg, #10B981, #FBBF24);
+}
+
+/* =========================================
+   PAGE 2 : MISSIONS — VIOLET & CORAIL PEPS
+   ========================================= */
+.page-missions {
+    background: linear-gradient(-45deg, #FFF7ED, #FFEDD5, #F5F3FF, #FED7AA);
+    background-size: 300% 300%;
+    color: #2E1065;
+}
+
+.page-missions header {
+    background: linear-gradient(135deg, #5B21B6, #EA580C);
+    box-shadow: 0 8px 24px rgba(91, 33, 182, 0.25);
+}
+
+.page-missions nav,
+.page-missions footer {
+    background-color: #3B0764;
+}
+
+.page-missions h2,
+.page-missions h3,
+.page-missions a {
+    color: #C2410C;
+}
+
+.page-missions nav a,
+.page-missions .bouton,
+.page-missions button,
+.page-missions .btn-haut,
+.page-missions footer {
+    color: #FFFFFF;
+}
+
+.page-missions h2 {
+    border-bottom: 3px solid #FDBA74;
+}
+
+.page-missions .carte,
+.page-missions .important {
+    background-color: #FFEDD5;
+    border: 1.5px solid #FB923C;
+    color: #431407;
+}
+
+.page-missions .important {
+    border-left: 6px solid #EA580C;
+}
+
+.page-missions .question {
+    background-color: #FFF7ED;
+    border: 1px solid #FDBA74;
+}
+
+.page-missions .bouton,
+.page-missions button,
+.page-missions .btn-haut {
+    background: linear-gradient(135deg, #EA580C, #7C3AED);
+    box-shadow: 0 8px 18px rgba(234, 88, 12, 0.3);
+}
+
+.page-missions .barre-progression {
+    background: linear-gradient(90deg, #F97316, #A855F7);
+}
+
+/* =========================================
+   PAGE 3 : ÉTUDES — BLEU ÉLECTRIQUE & CYAN
+   ========================================= */
+.page-etudes {
+    background: linear-gradient(-45deg, #ECFEFF, #CFFAFE, #EFF6FF, #A5F3FC);
+    background-size: 300% 300%;
+    color: #083344;
+}
+
+.page-etudes header {
+    background: linear-gradient(135deg, #1D4ED8, #0891B2);
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.25);
+}
+
+.page-etudes nav,
+.page-etudes footer {
+    background-color: #0F172A;
+}
+
+.page-etudes h2,
+.page-etudes h3,
+.page-etudes a {
+    color: #0369A1;
+}
+
+.page-etudes nav a,
+.page-etudes .bouton,
+.page-etudes button,
+.page-etudes .btn-haut,
+.page-etudes footer {
+    color: #FFFFFF;
+}
+
+.page-etudes h2 {
+    border-bottom: 3px solid #67E8F9;
+}
+
+.page-etudes .carte,
+.page-etudes .important {
+    background-color: #CFFAFE;
+    border: 1.5px solid #22D3EE;
+    color: #083344;
+}
+
+.page-etudes .important {
+    border-left: 6px solid #0284C7;
+}
+
+.page-etudes .question {
+    background-color: #ECFEFF;
+    border: 1px solid #67E8F9;
+}
+
+.page-etudes .bouton,
+.page-etudes button,
+.page-etudes .btn-haut {
+    background: linear-gradient(135deg, #0284C7, #1D4ED8);
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.3);
+}
+
+.page-etudes .barre-progression {
+    background: linear-gradient(90deg, #06B6D4, #3B82F6);
+}
