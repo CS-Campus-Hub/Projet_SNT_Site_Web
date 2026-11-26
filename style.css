@@ -142,3 +142,52 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+
+
+
+/* Récapitulatif des sujets */
+.recapitulatif {
+    margin-top: 55px;
+}
+
+.recapitulatif > p {
+    color: #64748b;
+}
+
+.recap-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+.recap-colonne {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    border-top: 4px solid #e7ad39;
+    box-shadow: 0 3px 15px #0000000c;
+}
+
+.recap-colonne h3 {
+    color: #283d78;
+    margin-top: 0;
+}
+
+.recap-colonne ul {
+    padding-left: 20px;
+}
+
+.recap-colonne li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .recap-grid {
+        grid-template-columns: 1fr;
+    }
+}
