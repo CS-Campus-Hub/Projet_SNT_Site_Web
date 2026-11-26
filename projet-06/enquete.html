@@ -1,0 +1,1147 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTHCHECK - L'enquête</title>
+  
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* MISE EN PAGE DE L'ENQUÊTE */
+
+        .enquete-page {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        .enq-tag, .enq-mini-tag {
+            display: inline-block;
+            color: #8EEBEB;
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .enq-hero {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 38px;
+            align-items: center;
+            padding: 75px 0 65px;
+        }
+
+        .enq-hero h1 {
+            color: white;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.12;
+            margin: 20px 0;
+        }
+
+        .enq-hero h1 span,
+        .enq-section-heading h2 span,
+        .enq-hero-panel h2 span {
+            color: #8EEBEB;
+        }
+
+        .enq-hero-copy > p,
+        .enq-section-heading > p {
+            color: #c9c4dc;
+            line-height: 1.8;
+        }
+
+        .enq-main-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background: #8EEBEB;
+            color: #17132F;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .enq-hero-panel {
+            min-height: 330px;
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid #514477;
+            border-radius: 26px;
+            background:
+                radial-gradient(circle at 70% 25%, #514080, transparent 40%),
+                linear-gradient(145deg, #29204f, #17132f);
+            box-shadow: 0 18px 50px #09071966;
+        }
+
+        .enq-joint-icon {
+            font-size: 5rem;
+            margin-bottom: 15px;
+        }
+
+        .enq-panel-kicker {
+            color: #bcb3d8;
+            font-size: .7rem;
+            letter-spacing: 1.5px;
+        }
+
+        .enq-hero-panel h2 {
+            color: white;
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        .enq-mini-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: #bcb3d8;
+            font-size: .68rem;
+        }
+
+        .enq-mini-pills span {
+            border: 1px solid #67578f;
+            border-radius: 30px;
+            padding: 7px 10px;
+        }
+
+        /* SECTIONS */
+
+        .enq-section {
+            padding: 55px 0;
+        }
+
+        .enq-section-heading {
+            max-width: 760px;
+            margin-bottom: 30px;
+        }
+
+        .enq-section-heading h2 {
+            color: white;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin: 18px 0;
+        }
+
+        .enq-feature-card,
+        .enq-person-card,
+        .enq-proof-card {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 28px;
+            padding: 24px;
+            border: 1px solid #443866;
+            border-radius: 22px;
+            background: linear-gradient(145deg, #241d43, #1d1837);
+            box-shadow: 0 12px 32px #08061544;
+        }
+
+        .enq-feature-image {
+            position: relative;
+            min-height: 270px;
+            overflow: hidden;
+            border-radius: 16px;
+            background: #100d25;
+        }
+
+        .enq-feature-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 270px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .enq-feature-image > span {
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
+            padding: 8px 11px;
+            border-radius: 8px;
+            color: #17132f;
+            background: #8EEBEB;
+            font-size: .68rem;
+            font-weight: 800;
+        }
+
+        .enq-feature-text h3,
+        .enq-person-card h3,
+        .enq-proof-card h3 {
+            color: white;
+            margin: 10px 0;
+            font-size: 1.35rem;
+        }
+
+        .enq-feature-text p,
+        .enq-step-card p,
+        .enq-person-card p,
+        .enq-timeline p,
+        .enq-proof-card p,
+        .enq-fact-card p,
+        .enq-result-card p,
+        .enq-warning-card p {
+            color: #c9c4dc;
+            line-height: 1.75;
+        }
+
+        /* PETIT ENCART CONSEIL */
+
+        .enq-fact-card {
+            display: flex;
+            gap: 18px;
+            margin-top: 22px;
+            padding: 22px 25px;
+            border: 1px solid #5c4a86;
+            border-radius: 18px;
+            background: #292149;
+        }
+
+        .enq-fact-icon {
+            font-size: 1.8rem;
+        }
+
+        .enq-fact-card strong {
+            color: #8EEBEB;
+        }
+
+        /* CARTES DES TROIS ÉTAPES */
+
+        .enq-steps-grid,
+        .enq-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .enq-step-card {
+            padding: 25px;
+            min-height: 230px;
+            border: 1px solid #443866;
+            border-radius: 20px;
+            background: #241d43;
+        }
+
+        .enq-step-number {
+            color: #8EEBEB;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .enq-step-emoji {
+            display: block;
+            margin: 18px 0 10px;
+            font-size: 2rem;
+        }
+
+        .enq-step-card h3 {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .enq-source-strip {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 22px;
+            padding: 18px 22px;
+            border-radius: 16px;
+            background: #292149;
+            border: 1px solid #514477;
+        }
+
+        .enq-source-strip > span {
+            font-size: 1.7rem;
+        }
+
+        .enq-source-strip p {
+            flex: 1;
+            color: #d0cbe0;
+            line-height: 1.6;
+        }
+
+        .enq-source-strip a,
+        .enq-text-link,
+        .enq-proof-card a {
+            color: #8EEBEB;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* DONALD UNGER */
+
+        .enq-person-card {
+            grid-template-columns: 190px 1fr;
+            align-items: center;
+            max-width: 800px;
+        }
+
+        .enq-person-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .enq-award {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 9px 12px;
+            color: #e5d9ff;
+            background: #3a2d60;
+            border-radius: 10px;
+            font-size: .85rem;
+        }
+
+        /* CHRONOLOGIE */
+
+        .enq-timeline {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 25px 0;
+        }
+
+        .enq-timeline article {
+            display: flex;
+            gap: 16px;
+            padding: 22px;
+            border: 1px solid #443866;
+            border-radius: 18px;
+            background: #211a3e;
+        }
+
+        .enq-timeline article > span {
+            flex: 0 0 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: #17132f;
+            background: #8EEBEB;
+            font-weight: 900;
+        }
+
+        .enq-timeline h3 {
+            margin: 3px 0 8px;
+            color: white;
+            font-size: 1.05rem;
+        }
+
+        .enq-timeline p {
+            margin: 0;
+        }
+
+        /* RÉSULTAT ET ATTENTION */
+
+        .enq-result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .enq-result-card,
+        .enq-warning-card {
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #514477;
+            background: #292149;
+        }
+
+        .enq-result-card > span {
+            display: block;
+            color: #8EEBEB;
+            font-size: .72rem;
+            font-weight: 800;
+        }
+
+        .enq-result-card strong {
+            display: block;
+            color: white;
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+
+        .enq-result-card small {
+            color: #bdb5d5;
+            line-height: 1.6;
+        }
+
+        .enq-warning-card {
+            border-color: #80643f;
+            background: #30243b;
+        }
+
+        .enq-warning-card h3 {
+            color: #f2d5a4;
+        }
+
+        /* CARTES DES PREUVES */
+
+        .enq-proof-card {
+            grid-template-columns: 55px 1fr;
+            gap: 18px;
+            padding: 22px;
+        }
+
+        .enq-proof-card > span {
+            font-size: 2rem;
+        }
+
+        .enq-proof-card small {
+            color: #8EEBEB;
+            font-weight: 800;
+            font-size: .7rem;
+        }
+
+        /* QUIZ */
+
+        .enq-quiz-section {
+            margin: 55px 0;
+            padding: 42px;
+            border: 1px solid #514477;
+            border-radius: 26px;
+            background: linear-gradient(145deg, #292149, #1d1837);
+        }
+
+        .enq-quiz-section .enq-section-heading {
+            text-align: center;
+            margin: 0 auto 28px;
+        }
+
+        .enq-quiz-section .question-box {
+            max-width: 680px;
+            margin: auto;
+            padding: 25px;
+            border: 1px solid #55477b;
+            border-radius: 18px;
+            background: #17132f;
+        }
+
+        .enq-quiz-section #question {
+            color: white;
+            margin: 25px 0;
+        }
+
+        .enq-quiz-section .answers {
+            display: grid;
+            gap: 12px;
+        }
+
+        .enq-quiz-section .answers button,
+        .enq-quiz-section #quiz-finish button {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #514477;
+            border-radius: 12px;
+            background: #292149;
+            color: white;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .enq-quiz-section .answers button:hover {
+            border-color: #8EEBEB;
+            background: #342958;
+        }
+
+        .enq-quiz-section #feedback {
+            color: #8EEBEB;
+        }
+
+        .enq-quiz-section #next-button {
+            margin-top: 14px;
+            padding: 13px 18px;
+            border: 0;
+            border-radius: 10px;
+            background: #8EEBEB;
+            color: #17132f;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .enq-quiz-section #quiz-finish {
+            max-width: 680px;
+            margin: 18px auto 0;
+            padding: 24px;
+            border-radius: 16px;
+            background: #17132f;
+            color: white;
+        }
+
+        /* NAVIGATION */
+
+        .enq-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 45px 0 65px;
+        }
+
+        .enq-navigation a {
+            padding: 14px 18px;
+            border: 1px solid #5a4b80;
+            border-radius: 12px;
+            color: #8EEBEB;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .enq-navigation a:hover {
+            background: #292149;
+        }
+
+        /* VERSION TÉLÉPHONE */
+
+        @media(max-width: 760px) {
+            .enq-hero {
+                grid-template-columns: 1fr;
+                padding: 48px 0;
+            }
+
+            .enq-hero-panel {
+                min-height: 260px;
+            }
+
+            .enq-feature-card,
+            .enq-person-card {
+                grid-template-columns: 1fr;
+            }
+
+            .enq-steps-grid,
+            .enq-proof-grid,
+            .enq-timeline,
+            .enq-result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .enq-source-strip {
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .enq-quiz-section {
+                padding: 24px 16px;
+            }
+
+            .enq-navigation {
+                flex-direction: column;
+            }
+
+            .enq-navigation a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="accueil.html">
+        MYTHCHECK<span>.</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Affirmation</a>
+        <a href="enquete.html" class="active">Enquête</a>
+        <a href="verdict.html">Verdict</a>
+         <a href="sources.html">Sources</a>
+       
+    </nav>
+</header>
+
+<main class="enquete-page">
+
+    <!-- INTRODUCTION -->
+
+    <section class="enq-hero">
+        <div class="enq-hero-copy">
+            <span class="enq-tag">✦ DOSSIER N°02 — INVESTIGATION</span>
+
+            <h1>
+                DERRIÈRE LE CRAC,<br>
+                QUE SE <span>CACHE-T-IL ?</span>
+            </h1>
+
+            <p>
+                Un bruit mystérieux, une croyance populaire
+                et des décennies de recherche scientifique.
+                Plongeons au cœur de nos articulations pour
+                découvrir ce qui se passe réellement.
+            </p>
+
+            <a class="enq-main-link" href="#phenomene">
+                Explorer l'enquête ↓
+            </a>
+        </div>
+
+        <div class="enq-hero-panel">
+            <div class="enq-joint-icon">🫧</div>
+            <p class="enq-panel-kicker">
+                À L'INTÉRIEUR DE L'ARTICULATION
+            </p>
+            <h2>
+                Le mystère<br>
+                du <span>craquement</span>
+            </h2>
+            <div class="enq-mini-pills">
+                <span>SCIENCE</span>
+                <span>ANATOMIE</span>
+                <span>OBSERVATION</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PARTIE 1 -->
+
+    <section class="enq-section" id="phenomene">
+
+        <div class="enq-section-heading">
+            <span class="enq-tag">01 — COMPRENDRE LE PHÉNOMÈNE</span>
+
+            <h2>
+                Pourquoi nos doigts<br>
+                font-ils <span>CRAC ?</span>
+            </h2>
+
+            <p>
+                Contrairement à ce que l'on pourrait croire,
+                le bruit ne signifie pas que nos os se cassent.
+                Il est lié à un phénomène physique qui se
+                produit dans nos articulations.
+            </p>
+        </div>
+
+        
+<div class="enq-feature-card" style="
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    flex-wrap: wrap;
+">
+
+    <!-- IMAGE À GAUCHE -->
+    <div class="enq-feature-image" style="
+        flex: 1 1 45%;
+        min-width: 260px;
+        text-align: center;
+    ">
+
+        <img
+            src="mecanisme-craquement.png"
+            alt="Schéma expliquant le mécanisme du craquement des doigts"
+            style="
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 12px;
+            ">
+       </p>
+
+        <p>
+
+        <span>ZOOM SUR UNE ARTICULATION</span>
+
+    </div>
+
+    <!-- TEXTE À DROITE -->
+    <div class="enq-feature-text" style="
+        flex: 1 1 45%;
+        min-width: 260px;
+    ">
+
+        <span class="enq-mini-tag">LE LIQUIDE SYNOVIAL</span>
+
+        <h3>Un liquide essentiel</h3>
+
+        <p>
+            Nos articulations contiennent un liquide
+            appelé <strong>liquide synovial</strong>.
+            Il permet de lubrifier les surfaces
+            articulaires et facilite les mouvements.
+        </p>
+
+        <p>
+            Lorsque nous étirons une articulation,
+            la pression à l'intérieur change.
+            Une cavité contenant du gaz apparaît
+            rapidement : ce phénomène est appelé
+            <strong>cavitation</strong>.
+        </p>
+
+        <p>
+            La formation de cette cavité est associée
+            au bruit caractéristique du craquement.
+        </p>
+
+    </div>
+
+</div>
+
+
+        <div class="enq-fact-card">
+            <span class="enq-fact-icon">💡</span>
+
+            <div>
+                <strong>LE SAVAIS-TU ?</strong>
+                <p>
+                    Le craquement ne correspond pas à un os
+                    qui se brise. Il est associé à un changement
+                    physique dans l'articulation.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- PARTIE 2 -->
+
+    <section class="enq-section">
+
+        <div class="enq-section-heading">
+            <span class="enq-tag">02 — OBSERVATION SCIENTIFIQUE</span>
+
+            <h2>
+                Les 3 étapes du fameux <span>CRAC !</span>
+            </h2>
+
+            <p>
+                Voici comment se déroule le phénomène
+                lorsque nous faisons craquer une articulation.
+            </p>
+        </div>
+
+        <div class="enq-steps-grid">
+
+            <article class="enq-step-card">
+                <span class="enq-step-number">01</span>
+                <span class="enq-step-emoji">🖐️</span>
+
+                <h3>Avant le craquement</h3>
+
+                <p>
+                    Les surfaces de l'articulation sont
+                    proches et baignent dans le liquide
+                    synovial.
+                </p>
+            </article>
+
+            <article class="enq-step-card">
+                <span class="enq-step-number">02</span>
+                <span class="enq-step-emoji">↗️</span>
+
+                <h3>Pendant le mouvement</h3>
+
+                <p>
+                    L'articulation est étirée.
+                    La pression change et une cavité
+                    se forme dans le liquide.
+                </p>
+            </article>
+
+            <article class="enq-step-card">
+                <span class="enq-step-number">03</span>
+                <span class="enq-step-emoji">💥</span>
+
+                <h3>Le fameux CRAC !</h3>
+
+                <p>
+                    La formation rapide de la cavité
+                    est associée au bruit que nous
+                    entendons.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="enq-source-strip">
+            <span>🔬</span>
+
+            <p>
+                En 2015, des chercheurs ont observé
+                ce phénomène grâce à l'imagerie par
+                résonance magnétique.
+            </p>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/25875374/"
+               target="_blank" rel="noopener">
+                Consulter l'étude →
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- PARTIE 3 -->
+
+    <section class="enq-section">
+
+        <div class="enq-section-heading">
+            <span class="enq-tag">03 — UNE EXPÉRIENCE ÉTONNANTE</span>
+
+            <h2>
+                50 ans à faire craquer ses doigts :
+                <span>LE TEST !</span>
+            </h2>
+
+            <p>
+                Et si quelqu'un décidait de vérifier
+                personnellement cette croyance ?
+                C'est exactement ce qu'a fait un médecin
+                américain : Donald Unger.
+            </p>
+        </div>
+
+       
+<div class="enq-person-card" style="
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    padding: 22px 28px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    align-items: center;
+">
+
+    <div>
+        <span class="enq-mini-tag">LE SCIENTIFIQUE</span>
+
+        <h3>Donald L. Unger</h3>
+
+        <p>
+            Un médecin américain qui a voulu
+            vérifier si faire craquer ses doigts
+            pouvait réellement provoquer
+            de l'arthrite.
+        </p>
+
+        <span class="enq-award">
+            🏆 Prix Ig Nobel de médecine — 2009
+        </span>
+    </div>
+
+</div>
+
+
+
+        <div class="enq-timeline">
+
+            <article>
+                <span>01</span>
+                <div>
+                    <h3>Le début de l'expérience</h3>
+                    <p>
+                        Depuis son enfance, son entourage
+                        lui répétait que faire craquer
+                        ses doigts provoquerait de l'arthrite.
+                        Il décide alors de tester cette idée.
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <span>02</span>
+                <div>
+                    <h3>50 années d'observation</h3>
+                    <p>
+                        Il fait craquer les articulations
+                        de sa main gauche au moins deux
+                        fois par jour. En revanche,
+                        il laisse sa main droite comme
+                        main de comparaison.
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <span>03</span>
+                <div>
+                    <h3>Le résultat surprenant</h3>
+                    <p>
+                        Après 50 ans, il ne constate
+                        aucune arthrite dans ses deux
+                        mains et aucune différence
+                        apparente entre elles.
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <span>04</span>
+                <div>
+                    <h3>Une reconnaissance insolite</h3>
+                    <p>
+                        En 2009, Donald Unger reçoit
+                        le prix Ig Nobel de médecine.
+                        Il rapporte avoir continué
+                        cette habitude pendant plus
+                        de 60 ans au total.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <div class="enq-result-grid">
+
+            <div class="enq-result-card">
+                <span>LE RÉSULTAT DE SON EXPÉRIENCE</span>
+
+                <strong>50 ANS</strong>
+
+                <p>
+                    Aucune arthrite constatée dans
+                    l'une ou l'autre de ses mains.
+                </p>
+
+                <small>
+                    Une expérience originale qui remet
+                    en question une croyance populaire.
+                </small>
+            </div>
+
+            <div class="enq-warning-card">
+                <h3>⚠️ Attention : une seule personne !</h3>
+
+                <p>
+                    Cette expérience est intéressante,
+                    mais elle ne porte que sur une seule
+                    personne. Elle ne suffit donc pas
+                    à prouver que le craquement des doigts
+                    est sans aucun risque pour tout le monde.
+                </p>
+            </div>
+
+        </div>
+
+        <a class="enq-text-link"
+           href="https://pubmed.ncbi.nlm.nih.gov/9588755/"
+           target="_blank" rel="noopener">
+            Lire l'étude originale de 1998 →
+        </a>
+
+    </section>
+
+
+    <!-- PARTIE 4 -->
+
+    <section class="enq-section">
+
+        <div class="enq-section-heading">
+            <span class="enq-tag">04 — LES PREUVES SCIENTIFIQUES</span>
+
+            <h2>
+                Que disent les <span>recherches ?</span>
+            </h2>
+
+            <p>
+                L'expérience de Donald Unger n'est pas
+                la seule source d'information.
+                D'autres chercheurs ont étudié
+                le craquement des articulations.
+            </p>
+        </div>
+
+        <div class="enq-proof-grid">
+
+            <article class="enq-proof-card">
+                <span>🔬</span>
+
+                <div>
+                    <small>2015 — IMAGERIE MÉDICALE</small>
+
+                    <h3>Observer le craquement en direct</h3>
+
+                    <p>
+                        Des chercheurs ont utilisé
+                        l'imagerie par résonance magnétique
+                        pour observer une articulation
+                        pendant son craquement.
+                        Ils ont mis en évidence la formation
+                        rapide d'une cavité.
+                    </p>
+
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/25875374/"
+                       target="_blank" rel="noopener">
+                        Lire l'étude scientifique →
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="enq-proof-card">
+                <span>📚</span>
+
+                <div>
+                    <small>2016 — REVUE MÉDICALE</small>
+
+                    <h3>Le lien avec l'arthrose</h3>
+
+                    <p>
+                        Une publication du Journal of Family
+                        Practice rapporte que le craquement
+                        habituel des doigts pendant plusieurs
+                        décennies n'est pas associé à des
+                        signes cliniques ou radiographiques
+                        d'arthrose.
+                    </p>
+
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27846331/"
+                       target="_blank" rel="noopener">
+                        Consulter la publication →
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="enq-proof-card">
+                <span>🏥</span>
+
+                <div>
+                    <small>INFORMATION MÉDICALE</small>
+
+                    <h3>L'avis de Harvard Health</h3>
+
+                    <p>
+                        Les informations médicales disponibles
+                        ne montrent pas de lien établi entre
+                        le fait de faire craquer ses doigts
+                        et l'apparition de l'arthrite.
+                    </p>
+
+                    <a href="https://www.health.harvard.edu/pain/does-cracking-knuckles-cause-arthritis"
+                       target="_blank" rel="noopener">
+                        Lire l'article de Harvard →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARTIE 5 : QUIZ -->
+
+    <section class="enq-quiz-section">
+
+        <div class="enq-section-heading">
+            <span class="enq-tag">05 — À TOI DE JOUER !</span>
+
+            <h2>
+                As-tu bien suivi <span>l'enquête ?</span>
+            </h2>
+
+            <p>
+                Vérifie tes connaissances avec ces
+                trois petites questions !
+            </p>
+        </div>
+
+        <div class="question-box" id="question-box">
+
+            <div class="quiz-progress">
+                <span id="progress-text">QUESTION 1 / 3</span>
+
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+
+            <h3 id="question">
+                Quel liquide se trouve dans nos articulations ?
+            </h3>
+
+            <div id="answers" class="answers">
+
+                <button onclick="repondre(0)">
+                    A. Le sang
+                </button>
+
+                <button onclick="repondre(1)">
+                    B. Le liquide synovial
+                </button>
+
+                <button onclick="repondre(2)">
+                    C. La salive
+                </button>
+
+            </div>
+
+            <p id="feedback" aria-live="polite"></p>
+
+            <button id="next-button"
+                    class="next-button"
+                    onclick="questionSuivante()"
+                    hidden>
+                QUESTION SUIVANTE →
+            </button>
+
+        </div>
+
+        <div id="quiz-finish" hidden>
+            <h3>ENQUÊTE TERMINÉE !</h3>
+            <p id="final-score"></p>
+
+            <button onclick="recommencer()">
+                RECOMMENCER LE QUIZ ↻
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="enq-navigation">
+
+        <a href="index.html">
+            ← Retour à l'affirmation
+        </a>
+
+        <a href="verdict.html">
+            Découvrir le verdict →
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    <a class="footer-logo" href="index.html">
+        MYTHCHECK<span>.</span>
+    </a>
+
+    <p>
+        Projet SNT • Santé & Science • SLFM 2026
+    </p>
+
+    <p class="footer-small">
+        Comprendre • Observer • Vérifier
+    </p>
+   </p>
+  <footer style="text-align: center;
+               padding: 25px 10px;
+               margin-top: 50px;
+               color: #8EEBEB;
+               font-size: 16px;
+               border-top: 1px solid #A88AFF;">
+    Réalisé par : Ndèye Fatou Ndao — 2ndB
+</footer>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+ 
+</html>

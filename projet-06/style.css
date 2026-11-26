@@ -1,0 +1,270 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #17132F;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: #211A42;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #A88AFF;
+}
+
+nav a {
+    color: #D8D0F5;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #8EEBEB;
+}
+
+.hero {
+    max-width: 950px;
+    margin: 65px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.tag {
+    color: #8EEBEB;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.3;
+    margin: 25px 0;
+}
+
+h1 span {
+    color: #B69AFF;
+}
+
+.intro {
+    color: #C9C0E8;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.image {
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 2px solid #7662B5;
+}
+
+.image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.information, .quiz {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 35px;
+    background: linear-gradient(135deg, #34265F, #25204D);
+    border: 1px solid #806BC7;
+    border-radius: 22px;
+    box-shadow: 0 0 25px #7454B522;
+}
+
+.information h2, .quiz h2 {
+    color: #B69AFF;
+    font-size: 27px;
+    margin: 15px 0 20px;
+}
+
+.information p {
+    color: #D8D0F5;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.step {
+    background: #211A42;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #6955A3;
+}
+
+.step span {
+    color: #8EEBEB;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin: 15px 0;
+    color: white;
+}
+
+.step p {
+    font-size: 13px;
+}
+
+.proof {
+    background: #211A42;
+    border-radius: 15px;
+    padding: 22px;
+    margin-top: 20px;
+    border-left: 4px solid #40D9D5;
+}
+
+.proof h3 {
+    margin-bottom: 12px;
+    color: #8EEBEB;
+}
+
+.proof a {
+    color: #B69AFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.proof a:hover {
+    color: #8EEBEB;
+}
+
+.quiz {
+    text-align: center;
+}
+
+.quiz h3 {
+    margin: 25px 0;
+}
+
+.quiz p {
+    color: #D8D0F5;
+}
+
+.answers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+button {
+    background: linear-gradient(90deg, #A17BFF, #40D9D5);
+    color: #17132F;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 20px #A17BFF66;
+}
+
+#resultat {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 15px;
+    gap: 15px;
+}
+
+.navigation a {
+    color: #8EEBEB;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #211A42;
+    text-align: center;
+    padding: 25px;
+    color: #AFA0CC;
+    font-size: 12px;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .information, .quiz {
+        margin: 20px 12px;
+        padding: 22px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.btn-sources {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 15px 35px;
+    background: #40D9D5;
+    color: #101827;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.btn-sources:hover {
+    background: #A88AFF;
+    color: white;
+    transform: scale(1.05);
+}
